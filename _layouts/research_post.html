@@ -18,53 +18,113 @@ layout: default
 
   <h2>Ask anything about this paper</h2>
 
-  <div id="chat-box" style="
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    padding: 15px;
-    max-width: 700px;
-    background: #fafafa;">
-    
-    <div id="chat-log" style="min-height:120px; margin-bottom:10px;"></div>
+  <div id="chatbot-container">
+    <div id="api-key-sidebar">
+      <input type="text" id="api-key-input" placeholder="Enter your Gemini API key">
+      <button id="save-api-key">Save</button>
+      <div>
+        <input type="checkbox" id="use-public-assistant" checked>
+        <label for="use-public-assistant">Use public assistant (no key needed)</label>
+      </div>
+    </div>
+    <div id="chat-box" style="
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      padding: 15px;
+      max-width: 700px;
+      background: #fafafa;">
+      
+      <div id="chat-log" style="min-height:120px; margin-bottom:10px;"></div>
 
-    <input id="chat-input"
-      type="text"
-      placeholder="Ask a question about this paper..."
-      style="width: 100%; padding: 10px; border-radius: 6px;">
+      <input id="chat-input"
+        type="text"
+        placeholder="Ask a question about this paper..."
+        style="width: 100%; padding: 10px; border-radius: 6px;">
+    </div>
   </div>
 </div>
 
 <script>
-document.getElementById("chat-input").addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
-        const question = this.value.trim();
-        if (!question) return;
-
-        const chatLog = document.getElementById("chat-log");
-        chatLog.innerHTML += "<p><strong>You:</strong> " + question + "</p>";
-
-        this.value = "";
-
-        // Send to OpenAI API (requires user’s API key stored separately)
-        fetch("https://api.openai.com/v1/chat/completions", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + localStorage.getItem("user_api_key")
-            },
-            body: JSON.stringify({
-                model: "gpt-4o-mini",
-                messages: [
-                  { role: "system", content: "You answer ONLY using the content of this research paper: {{ page.abstract | escape }} {{ content | escape }}" },
-                  { role: "user", content: question }
-                ]
-            })
-        })
-        .then(res => res.json())
-        .then(data => {
-            const answer = data.choices?.[0]?.message?.content || "Error";
-            chatLog.innerHTML += "<p><strong>Bot:</strong> " + answer + "</p>";
-        })
+document.addEventListener('DOMContentLoaded', () => {
+    const apiKeyInput = document.getElementById('api-key-input');
+    const saveButton = document.getElementById('save-api-key');
+    const publicToggle = document.getElementById('use-public-assistant');
+    const chatInput = document.getElementById('chat-input');
+    const chatLog = document.getElementById('chat-log');
+    
+    let userApiKey = localStorage.getItem('gemini_api_key');
+    if (userApiKey) {
+      apiKeyInput.value = userApiKey;
     }
+
+    saveButton.addEventListener('click', () => {
+        userApiKey = apiKeyInput.value.trim();
+        if (userApiKey) {
+            localStorage.setItem('gemini_api_key', userApiKey);
+            alert('API key saved!');
+        }
+    });
+
+    chatInput.addEventListener('keypress', async (e) => {
+        if (e.key === 'Enter') {
+            const question = chatInput.value.trim();
+            if (!question) return;
+
+            chatLog.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+            chatInput.value = '';
+
+            const paperContext = `You answer ONLY using the content of this research paper: {{ page.abstract | escape }} {{ content | escape }}`;
+
+            if (publicToggle.checked) {
+                // Use the public assistant (backend proxy)
+                try {
+                    const response = await fetch('/api/chat', { // This will be our Firebase Function endpoint
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{ text: `${paperContext}\n\n${question}` }]
+                            }]
+                        })
+                    });
+                    const data = await response.json();
+                    const answer = data.candidates[0].content.parts[0].text || 'Error from public assistant.';
+                    chatLog.innerHTML += `<p><strong>Bot:</strong> ${answer}</p>`;
+                } catch (error) {
+                    console.error('Error with public assistant:', error);
+                    chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, something went wrong with the public assistant.</p>`;
+                }
+            } else {
+                // Use the user's own API key
+                if (!userApiKey) {
+                    chatLog.innerHTML += `<p><strong>Bot:</strong> Please enter your Gemini API key to ask a question.</p>`;
+                    return;
+                }
+
+                try {
+                    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${userApiKey}`;
+                    const response = await fetch(GEMINI_API_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{ text: `${paperContext}\n\n${question}` }]
+                            }]
+                        })
+                    });
+                    const data = await response.json();
+                    if (data.candidates && data.candidates.length > 0) {
+                        const answer = data.candidates[0].content.parts[0].text;
+                        chatLog.innerHTML += `<p><strong>Bot:</strong> ${answer}</p>`;
+                    } else {
+                         chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I couldn't get a response. Check your API key and network connection.</p>`;
+                    }
+                } catch (error) {
+                    console.error('Error with user API key:', error);
+                    chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, something went wrong. Please check your API key and network connection.</p>`;
+                }
+            }
+        }
+    });
 });
 </script>
