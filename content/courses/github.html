@@ -1,0 +1,14 @@
+---
+layout: default
+title: "GitHub Course"
+---
+
+{% assign lessons = site.github | sort: "title" %}
+
+{% if lessons.size > 0 %}
+<script>
+  window.location.href = "{{ lessons[0].url | relative_url }}";
+</script>
+{% else %}
+<h1>No lessons found.</h1>
+{% endif %}

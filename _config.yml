@@ -1,0 +1,31 @@
+title: Zeural
+collections:
+  posts:
+    output: true
+  github:
+    output: true
+  mythology:
+    output: true
+  aws:
+    output: true
+  js:
+    output: true
+  cpp:
+    output: true
+  c:
+    output: true
+  research:
+    output: true
+  fortran:
+    output: true
+url: "https://zeural1.github.io"
+baseurl: ""
+plugins:
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: "mythology"
+    values:
+      layout: "post"

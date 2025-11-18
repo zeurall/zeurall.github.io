@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="google-site-verification" content="4Mj86ogE81O_JQlRitf6ABYTCVM1jn0w7YL6TS4ZFNU" />
+        <title>Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models</title>
+          <meta name="description" content="Exploring AI, robotics, and physics projects by Dishana Rupani.">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon1.png">
+
+            <!-- CSS Stylesheets -->
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+              <link rel="stylesheet" href="/styles/main.css">
+                <link rel="stylesheet" href="/styles/navbar.css">
+                  <link rel="stylesheet" href="/styles/footer.css">
+                    <link rel="stylesheet" href="/styles/homepage.css">
+                      <link rel="stylesheet" href="/styles/blog.css">
+                        <link rel="stylesheet" href="/styles/theme.css">
+                          <link rel="stylesheet" href="/styles/courses.css">
+                            
+                                  </head>
+                                  <body>
+                                  
+                                    <!-- Navbar -->
+                                      <nav class="navbar">
+    <div class="navbar-container">
+        <a href="/" class="navbar-brand">
+            <img src="https://github.com/zeural1/zeural1.github.io/blob/main/assets/images/alz.jpeg?raw=true" 
+                 alt="Zeural Logo" 
+                 class="navbar-logo-img">
+            <span class="navbar-logo-text">Zeural</span>
+        </a>
+        <ul class="navbar-menu">
+            <li><a href="/content/mythology/index.html">Mythology</a></li>
+            <li><a href="/content/ai-ml/index.html">AI-ML</a></li>
+            <li><a href="/content/courses/index.html">Courses</a></li>
+            <li><a href="/content/research/research.html">Research</a></li>
+            <li><a href="/blog.html">Blogs</a></li>
+        </ul>
+        <div class="navbar-actions">
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search..." class="search-bar">
+                <ul id="search-results"></ul>
+            </div>
+            <button id="search-toggle" class="search-toggle">🔍</button>
+            <button id="theme-toggle" class="theme-toggle">🌙</button>
+            <button id="mobile-toggle" class="mobile-toggle">☰</button>
+        </div>
+    </div>
+</nav>
+
+                                      
+                                        <!-- Main page content -->
+                                          <main class="content-padding">
+                                              <div class="container">
+  <h1>Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models</h1>
+  <p><strong>Authors:</strong> Joan Font-Quer RosetDevina MohanAnna Scaife</p>
+  <p><strong>Year:</strong> 2025</p>
+  <p><strong>PDF:</strong> <a href="https://arxiv.org/pdf/2511.11490v1" target="_blank">https://arxiv.org/pdf/2511.11490v1</a></p>
+
+  <hr>
+
+  <h2>Abstract</h2>
+  <p>In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural network (BNN) energy scores, which measure how similar the radio sources are to the MiraBest subset of the RGZ dataset. We find that out-of-distribution sources exhibit higher iD values, and that the overall iD for RGZ exceeds those typically reported for natural image datasets. Furthermore, we analyse how iD varies across Fanaroff-Riley (FR) morphological classes and as a function of the signal-to-noise ratio (SNR). While no relationship is found between FR I and FR II classes, a weak trend toward higher SNR at lower iD. Future work using the RGZ dataset could make use of the relationship between iD and energy scores to quantitatively study and improve the representations learned by various self-supervised learning algorithms.</p>
+
+  <hr>
+
+  <div id="chatbot-container">
+    <div id="api-key-sidebar">
+      <input type="text" id="api-key-input" placeholder="Enter your OpenAI API key">
+      <button id="save-api-key">Save</button>
+      <div>
+        <input type="checkbox" id="use-public-assistant">
+        <label for="use-public-assistant">Use public assistant (no key needed)</label>
+      </div>
+    </div>
+    <div id="chatbot"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const apiKeyInput = document.getElementById('api-key-input');
+  const saveButton = document.getElementById('save-api-key');
+  const publicToggle = document.getElementById('use-public-assistant');
+  const chatbotDiv = document.getElementById('chatbot');
+  const apiKeySidebar = document.getElementById('api-key-sidebar');
+
+  const paperAbstract = 'In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural network (BNN) energy scores, which measure how similar the radio sources are to the MiraBest subset of the RGZ dataset. We find that out-of-distribution sources exhibit higher iD values, and that the overall iD for RGZ exceeds those typically reported for natural image datasets. Furthermore, we analyse how iD varies across Fanaroff-Riley (FR) morphological classes and as a function of the signal-to-noise ratio (SNR). While no relationship is found between FR I and FR II classes, a weak trend toward higher SNR at lower iD. Future work using the RGZ dataset could make use of the relationship between iD and energy scores to quantitatively study and improve the representations learned by various self-supervised learning algorithms.';
+
+  const render = () => {
+    const apiKey = localStorage.getItem('user_api_key');
+    const usePublic = publicToggle.checked;
+
+    chatbotDiv.innerHTML = ''; // Clear previous content
+
+    if (usePublic || !apiKey) {
+      // Render public assistant UI (placeholder)
+      const publicAssistant = document.createElement('div');
+      publicAssistant.innerHTML = '<h3>Public Assistant</h3><p>This assistant does not require an API key.</p>';
+      chatbotDiv.appendChild(publicAssistant);
+      apiKeySidebar.style.display = 'block';
+    } else {
+      // Render API-key based chatbot
+      const privateChatbot = document.createElement('div');
+      privateChatbot.innerHTML = `
+        <h3>Chat with your own API Key</h3>
+        <div id="messages" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+        <input type="text" id="message-input" placeholder="Ask about the paper..." style="width: calc(100% - 70px);">
+        <button id="send-message">Send</button>
+      `;
+      chatbotDiv.appendChild(privateChatbot);
+      apiKeySidebar.style.display = 'none'; // Hide sidebar when using private key
+
+      const messagesDiv = document.getElementById('messages');
+      const messageInput = document.getElementById('message-input');
+      const sendMessageButton = document.getElementById('send-message');
+
+      sendMessageButton.addEventListener('click', async () => {
+        const userMessage = messageInput.value;
+        messageInput.value = '';
+        messagesDiv.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+
+        // Call OpenAI API
+        try {
+          const response = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${apiKey}`
+              },
+              body: JSON.stringify({
+                  model: 'gpt-3.5-turbo',
+                  messages: [
+                      { role: 'system', content: `You are a research assistant. Here is the paper\'s abstract: ${paperAbstract}` },
+                      { role: 'user', content: userMessage }
+                  ]
+              })
+          });
+
+          if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error.message);
+          }
+
+          const data = await response.json();
+          const assistantMessage = data.choices[0].message.content;
+          messagesDiv.innerHTML += `<p><strong>Assistant:</strong> ${assistantMessage}</p>`;
+        } catch (error) {
+          messagesDiv.innerHTML += `<p><strong>Error:</strong> ${error.message}</p>`;
+        }
+
+      });
+    }
+  };
+
+  saveButton.addEventListener('click', () => {
+    const apiKey = apiKeyInput.value.trim();
+    if (apiKey) {
+      localStorage.setItem('user_api_key', apiKey);
+      publicToggle.checked = false; // uncheck public when key is saved
+      render();
+    }
+  });
+
+  publicToggle.addEventListener('change', render);
+
+  // Initial render
+  const savedApiKey = localStorage.getItem('user_api_key');
+  if (!savedApiKey) {
+    publicToggle.checked = true;
+  }
+  render();
+});
+</script>
+                                                </main>
+                                                
+                                                  <!-- Footer -->
+                                                    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <a href="/content/about/index.html" class="footer-logo-link">
+                <img src="/assets/images/alz.jpeg" alt="Alzeural Logo" class="footer-logo-img">
+                <div class="footer-logo">Zeural</div>
+            </a>
+            <p class="footer-tagline">High quality coding education maintained by an open source community.</p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>About us</h3>
+            <ul>
+                <li><a href="/content/footer/about.html">About</a></li>
+                <li><a href="/content/footer/team.html">Team</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#">Success Stories</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="/content/footer/faq.html">FAQ</a></li>
+                <li><a href="/content/footer/contribute.html">Contribute</a></li>
+                <li><a href="/content/footer/contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Guides</h3>
+            <ul>
+                <li><a href="/content/footer/guidelines.html">Community guides</a></li>
+                <li><a href="#">Installation guides</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="/content/footer/terms.html">Terms</a></li>
+                <li><a href="/content/footer/privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>© 2025 Zeural. All rights reserved.</p>
+    </div>
+</footer>
+
+                                                    
+                                                      <script src="/scripts/background.js"></script>
+                                                        <script src="/scripts/cube-animation.js"></script>
+                                                          <script src="/scripts/mythology.js"></script>
+                                                            <script src="/scripts/navbar.js"></script>
+                                                              <script src="/scripts/progress-tracker.js"></script>
+                                                              <script src="/scripts/search.js"></script>
+                                                              <script src="/scripts/theme-switcher.js"></script>
+                                                              </body>
+</html>

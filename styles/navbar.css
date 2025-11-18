@@ -1,0 +1,235 @@
+:root {
+    --text-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar:hover {
+    box-shadow: 0 4px 20px rgba(10, 10, 10, 0.8);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo-img:hover {
+    transform: scale(1.1);
+}
+
+.navbar-logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff4500;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.navbar-menu a {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s ease, color 0.3s ease;
+    font-weight: 400;
+}
+
+.navbar-menu a:hover {
+    background: none;
+    color: #bdbdbd;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-toggle, .theme-toggle, .mobile-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.search-toggle:hover, .mobile-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: none;
+}
+
+#search-container {
+    position: relative; /* Needed for absolute positioning of results */
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.search-bar {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    width: 200px;
+}
+
+#search-results {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Position below the search bar */
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95); /* Dark background */
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 5px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none; /* Hidden by default */
+}
+
+#search-results li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#search-results li:last-child {
+    border-bottom: none;
+}
+
+#search-results a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+}
+
+#search-results a:hover {
+    color: #ff4500;
+}
+
+#search-results .result-title {
+    font-weight: 700;
+}
+
+#search-results .result-excerpt {
+    font-size: 0.8rem;
+    color: #bdbdbd;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#search-btn {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #ff4500;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#search-btn:hover {
+    background: #e03d00;
+}
+
+.mobile-toggle {
+    display: none; /* Hide by default */
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #000000;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .mobile-toggle {
+        display: block; /* Show on mobile */
+    }
+    
+    #search-container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #000000;
+        padding: 1rem;
+        margin-right: 0;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+}

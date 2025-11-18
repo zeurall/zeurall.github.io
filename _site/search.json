@@ -1,0 +1,201 @@
+[
+  
+    {
+      "title": "Neural Networks: The Backbone of AI",
+      "url": "/2025/10/06/neural-networks.html",
+      "date": "October 06, 2025",
+      "tags": "Neural Networks, Deep Learning, AI",
+      "content": "Neural networks are the fundamental building blocks of modern AI. Inspired by the human brain, they consist of layers of interconnected nodes capable of learning patterns from data.Applications range from image and speech recognition to autonomous systems and predictive analytics. As neural network architectures evolve, they continue to unlock unprecedented possibilities in AI research and practical solutions."
+    }
+    ,
+  
+    {
+      "title": "ChatGPT and the AI Revolution",
+      "url": "/2025/10/05/chatgpt.html",
+      "date": "October 05, 2025",
+      "tags": "ChatGPT, AI, Natural Language Processing",
+      "content": "ChatGPT represents a major milestone in natural language processing. Built on large language models, it can generate human-like text, answer complex questions, and assist in creative writing and coding.This technology is transforming industries like customer support, education, and content creation. As AI becomes more advanced, tools like ChatGPT demonstrate the potential of machines to understand and interact with human language seamlessly."
+    }
+    ,
+  
+    {
+      "title": "M-Theory: The Quest for a Unified Theory",
+      "url": "/2025/10/04/m-theory.html",
+      "date": "October 04, 2025",
+      "tags": "M-Theory, Physics, Cosmology",
+      "content": "M-Theory represents a bold attempt to unify all fundamental forces of nature into a single framework. It extends string theory by introducing higher-dimensional objects called branes, potentially explaining the fabric of the universe.Although still theoretical, M-Theory has profound implications for understanding black holes, quantum gravity, and the origin of the cosmos. Physicists continue to explore its complex mathematics and connections to observable phenomena."
+    }
+    ,
+  
+    {
+      "title": "Exploring Robotics",
+      "url": "/2025/10/03/robotics.html",
+      "date": "October 03, 2025",
+      "tags": "Robotics, AI, Automation",
+      "content": "Robotics is rapidly evolving with the integration of AI and machine learning. Modern robots can navigate complex environments, interact with humans safely, and perform intricate tasks in manufacturing, healthcare, and exploration.From autonomous drones to humanoid robots, the field is driven by innovation in sensors, actuators, and intelligent algorithms. Robotics research continues to enhance efficiency, safety, and versatility across industries worldwide."
+    }
+    ,
+  
+    {
+      "title": "Exploring Dark Matter",
+      "url": "/2025/10/03/dark-matter.html",
+      "date": "October 03, 2025",
+      "tags": "Dark Matter, Physics, Research",
+      "content": "Dark matter is one of the most mysterious components of our universe. Recent experiments have revealed fascinating clues about its properties…"
+    }
+    ,
+  
+    {
+      "title": "Advancements in Computer Vision",
+      "url": "/2025/10/02/computer-vision.html",
+      "date": "October 02, 2025",
+      "tags": "Computer Vision, AI, Deep Learning",
+      "content": "Computer vision has transformed the way machines interpret the world. By leveraging convolutional neural networks and modern AI techniques, machines can now recognize faces, analyze medical images, detect objects, and even understand complex scenes.From autonomous vehicles to augmented reality applications, computer vision plays a critical role in bridging the gap between humans and machines. Continuous research in this field is pushing the boundaries of what is possible in automation and intelligent systems."
+    }
+    ,
+  
+    {
+      "title": "The Alzeural Platform",
+      "url": "/2025/10/01/alzeural-platform.html",
+      "date": "October 01, 2025",
+      "tags": "Alzeural, EdTech, Open Source",
+      "content": "Alzeural is a revolutionary open-source platform aimed at providing high-quality coding and technology education. With a focus on community-driven learning, it allows enthusiasts from around the globe to contribute, learn, and grow together. The platform covers a wide range of topics from AI, machine learning, robotics, and beyond, offering elegant paths to mastery.Through structured content and interactive exercises, learners gain practical experience while collaborating on real projects. Alzeural exemplifies the power of open-source initiatives in shaping the next generation of tech innovators."
+    }
+    ,
+  
+    {
+      "title": "Welcome to My Blog!",
+      "url": "/jekyll/update/2023/10/27/welcome-to-my-blog.html",
+      "date": "October 27, 2023",
+      "tags": "",
+      "content": "This is my first blog post. I’m excited to share my thoughts with you!"
+    }
+    ,
+  
+    {
+      "title": "Introduction to GitHub",
+      "url": "/github/01-introduction.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": "This is the first lesson in the GitHub course. Here, you will learn the basics of what GitHub is and why it is so important for developers."
+    }
+    ,
+  
+    {
+      "title": "Lesson 1: Introduction to GitHub",
+      "url": "/github/01_introduction.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": "Lesson 1: Introduction to GitHubThis is a placeholder for the lesson content."
+    }
+    ,
+  
+    {
+      "title": "Basic Git Commands",
+      "url": "/github/02-basic-commands.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": "In this lesson, you will learn the most essential Git commands that you will use every day, such as git add, git commit, and git push."
+    }
+    ,
+  
+    {
+      "title": "Inferring response times of perceptual decisions with Poisson variational autoencoders",
+      "url": "/research/2511.11480v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "ImAgent: A Unified Multimodal Agent Framework for Test-Time Scalable Image Generation",
+      "url": "/research/2511.11483v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models",
+      "url": "/research/2511.11490v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "PAS : Prelim Attention Score for Detecting Object Hallucinations in Large Vision--Language Models",
+      "url": "/research/2511.11502v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Experience-Guided Adaptation of Inference-Time Reasoning Strategies",
+      "url": "/research/2511.11519v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Volumetric Ergodic Control",
+      "url": "/research/2511.11533v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping",
+      "url": "/research/2511.11551v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Human-AI collaborative autonomous synthesis with pulsed laser deposition for remote epitaxy",
+      "url": "/research/2511.11558v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication",
+      "url": "/research/2511.11560v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Private Frequency Estimation Via Residue Number Systems",
+      "url": "/research/2511.11569v1.html",
+      "date": "November 17, 2025",
+      "tags": "",
+      "content": ""
+    }
+    ,
+  
+    {
+      "title": "Greek Myths",
+      "url": "/mythology/greek-myths.html",
+      "date": "October 03, 2025",
+      "tags": "Greek, Gods, Legends",
+      "content": "Content of the Greek mythology story goes here…"
+    }
+    
+  
+]

@@ -1,0 +1,125 @@
+---
+layout: default
+---
+
+<div class="container">
+  <h1>{{ page.title }}</h1>
+  <p><strong>Authors:</strong> {{ page.authors }}</p>
+  <p><strong>Year:</strong> {{ page.year }}</p>
+  <p><strong>PDF:</strong> <a href="{{ page.pdf }}" target="_blank">{{ page.pdf }}</a></p>
+
+  <hr>
+
+  <h2>Abstract</h2>
+  <p>{{ page.abstract }}</p>
+
+  <hr>
+
+  <div id="chatbot-container">
+    <div id="api-key-sidebar">
+      <input type="text" id="api-key-input" placeholder="Enter your OpenAI API key">
+      <button id="save-api-key">Save</button>
+      <div>
+        <input type="checkbox" id="use-public-assistant">
+        <label for="use-public-assistant">Use public assistant (no key needed)</label>
+      </div>
+    </div>
+    <div id="chatbot"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const apiKeyInput = document.getElementById('api-key-input');
+  const saveButton = document.getElementById('save-api-key');
+  const publicToggle = document.getElementById('use-public-assistant');
+  const chatbotDiv = document.getElementById('chatbot');
+  const apiKeySidebar = document.getElementById('api-key-sidebar');
+
+  const paperAbstract = '{{ page.abstract | escape }}';
+
+  const render = () => {
+    const apiKey = localStorage.getItem('user_api_key');
+    const usePublic = publicToggle.checked;
+
+    chatbotDiv.innerHTML = ''; // Clear previous content
+
+    if (usePublic || !apiKey) {
+      // Render public assistant UI (placeholder)
+      const publicAssistant = document.createElement('div');
+      publicAssistant.innerHTML = '<h3>Public Assistant</h3><p>This assistant does not require an API key.</p>';
+      chatbotDiv.appendChild(publicAssistant);
+      apiKeySidebar.style.display = 'block';
+    } else {
+      // Render API-key based chatbot
+      const privateChatbot = document.createElement('div');
+      privateChatbot.innerHTML = `
+        <h3>Chat with your own API Key</h3>
+        <div id="messages" style="height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;"></div>
+        <input type="text" id="message-input" placeholder="Ask about the paper..." style="width: calc(100% - 70px);">
+        <button id="send-message">Send</button>
+      `;
+      chatbotDiv.appendChild(privateChatbot);
+      apiKeySidebar.style.display = 'none'; // Hide sidebar when using private key
+
+      const messagesDiv = document.getElementById('messages');
+      const messageInput = document.getElementById('message-input');
+      const sendMessageButton = document.getElementById('send-message');
+
+      sendMessageButton.addEventListener('click', async () => {
+        const userMessage = messageInput.value;
+        messageInput.value = '';
+        messagesDiv.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+
+        // Call OpenAI API
+        try {
+          const response = await fetch('https://api.openai.com/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${apiKey}`
+              },
+              body: JSON.stringify({
+                  model: 'gpt-3.5-turbo',
+                  messages: [
+                      { role: 'system', content: `You are a research assistant. Here is the paper\'s abstract: ${paperAbstract}` },
+                      { role: 'user', content: userMessage }
+                  ]
+              })
+          });
+
+          if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error.message);
+          }
+
+          const data = await response.json();
+          const assistantMessage = data.choices[0].message.content;
+          messagesDiv.innerHTML += `<p><strong>Assistant:</strong> ${assistantMessage}</p>`;
+        } catch (error) {
+          messagesDiv.innerHTML += `<p><strong>Error:</strong> ${error.message}</p>`;
+        }
+
+      });
+    }
+  };
+
+  saveButton.addEventListener('click', () => {
+    const apiKey = apiKeyInput.value.trim();
+    if (apiKey) {
+      localStorage.setItem('user_api_key', apiKey);
+      publicToggle.checked = false; // uncheck public when key is saved
+      render();
+    }
+  });
+
+  publicToggle.addEventListener('change', render);
+
+  // Initial render
+  const savedApiKey = localStorage.getItem('user_api_key');
+  if (!savedApiKey) {
+    publicToggle.checked = true;
+  }
+  render();
+});
+</script>

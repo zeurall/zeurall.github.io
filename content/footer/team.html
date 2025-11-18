@@ -1,0 +1,21 @@
+---
+layout: default
+title: Our Team
+custom_stylesheet: /styles/team.css
+---
+
+<div class="container">
+  <h1>Our Team</h1>
+  <p>The following individuals have contributed to this project:</p>
+  
+  <div class="team-container">
+    {% for contributor in site.github.contributors %}
+      <div class="contributor-card">
+        <a href="{{ contributor.html_url }}" target="_blank">
+          <img src="{{ contributor.avatar_url }}" alt="{{ contributor.login }}" class="contributor-avatar">
+          <p class="contributor-login">{{ contributor.login }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

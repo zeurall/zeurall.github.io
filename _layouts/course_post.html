@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<div class="course-page-container" style="display: flex; gap: 20px;">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="course-sidebar" style="width: 250px;">
+    <div class="course-logo">
+      <a href="/content/courses/{{ page.course }}.html">
+        <img src="/assets/images/{{ page.course }}-logo.png" alt="{{ page.course | capitalize }} Logo">
+      </a>
+    </div>
+
+    <ul class="lesson-list">
+      {% assign sorted_posts = site[page.course] | sort: 'title' %}
+      {% for post in sorted_posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}" 
+             {% if post.url == page.url %}class="active"{% endif %}>
+             {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="course-content" style="flex: 1; padding-right: 20px;">
+    {{ content }}
+  </div>
+
+
+  <!-- RIGHT SIDEBAR (AUTO SYLLABUS) -->
+  <div class="course-syllabus" style="width: 250px; border-left: 1px solid #ddd; padding-left: 20px;">
+    <h3>Syllabus</h3>
+
+    <ul class="syllabus-list" style="list-style: none; padding-left: 0;">
+      {% assign parts = content | split: '<h' %}
+      {% for part in parts %}
+        {% if part contains '</h2>' %}
+          {% assign header = part | split: '</h2>' | first %}
+          {% assign text = header | split: '>' | last %}
+
+          <li style="margin-bottom: 8px;">
+            <a href="#{{ text | slugify }}">{{ text }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>

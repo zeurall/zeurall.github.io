@@ -1,0 +1,18 @@
+---
+layout: lesson
+title: "Valhalla and the Valkyries: The Hall of the Slain"
+section: 5
+image: /assets/mythology/valhalla.jpg
+---
+
+## Valhalla and the Valkyries: The Hall of the Slain
+
+In the grand cosmology of the Norse people, the concept of the afterlife was not a simple matter of heaven or hell. For the Viking warrior, the most glorious and sought-after fate was to die bravely in battle and be chosen to enter Valhalla, the majestic Hall of the Slain. Presided over by Odin, the All-Father, Valhalla was a warrior's paradise, a place of feasting, fighting, and preparing for the ultimate conflict at the end of the world. This celestial hall and the divine beings who selected its inhabitants, the Valkyries, form one of the most iconic and powerful elements of Norse mythology.
+
+Valhalla (Valhöll in Old Norse, meaning "Hall of the Slain") is located in Asgard, the realm of the gods. It is a vast and magnificent hall, so large that its rafters are made of shining spears, its roof is tiled with golden shields, and its benches are strewn with coats of mail. It is said to have 540 massive doors, each wide enough for 800 warriors to march through side-by-side. This immense size is necessary to accommodate the endless stream of chosen champions, known as the Einherjar, who are destined to fill its halls.
+
+The life of an Einherjar in Valhalla is one of eternal, joyous combat. Every day, they don their armor, take up their weapons, and engage in ferocious battles in the great courtyard of Asgard. They fight with all their might, suffering grievous wounds and even death, only to be miraculously healed and resurrected by evening. They then gather together in the great hall to feast. Their meal is a grand affair, where they are served the meat of the cosmic boar, Sæhrímnir, who is cooked and eaten each night only to be whole again the next day. They drink their fill of heavenly mead that flows from the udders of the goat Heiðrún, who grazes on the leaves of the world tree, Yggdrasil.
+
+This endless cycle of fighting and feasting is not without purpose. The Einherjar are not merely enjoying an eternal reward; they are Odin's hand-picked army, training for the prophesied doom of the gods, Ragnarök. When the final day comes, the great horn Gjallarhorn will sound, and the Einherjar will stream from the gates of Valhalla to fight alongside Odin and the other Æsir gods against the forces of chaos—the giants, the monsters, and the armies of the dead led by Loki. The glory of Valhalla, therefore, is intrinsically linked to the tragic, heroic destiny of the Norse cosmos.
+
+The agents of Odin responsible for choosing who dies in battle and who is worthy of a place in Valhalla are the Valkyries. These "choosers of the slain" are female warrior-spirits, depicted as beautiful but fearsome maidens clad in armor, riding winged horses through the sky above battlefields. They are not passive observers; they have the power to influence the outcome of a battle, weaving the fate of warriors on a grim loom. When a warrior falls with honor, a Valkyrie descends to grant them the "Valkyrie's kiss" and escort their spirit from the battlefield to the gates of Valhalla. This process elevates a mortal death into a moment of divine selection and ultimate glory. Not all who die in battle are chosen, however; only half go to Odin's hall, while the other half are taken by the goddess Freyja to her own afterlife field, Fólkvangr. The Valkyries, therefore, are both dispensers of fate and the vital link between the mortal realm of combat and the divine realm of eternal honor.

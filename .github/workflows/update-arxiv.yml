@@ -1,0 +1,62 @@
+name: Update AI Papers from arXiv
+
+on:
+  schedule:
+    - cron: "*/2 * * * *"   # runs every two minutes
+  workflow_dispatch:
+
+jobs:
+  fetch-papers:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Fetch latest AI papers from arXiv
+      run: |
+        mkdir -p _papers
+        curl -s "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=lastUpdatedDate&max_results=5" > arxiv.xml
+
+        python3 << 'EOF'
+import xml.etree.ElementTree as ET
+import datetime, os
+
+tree = ET.parse("arxiv.xml")
+root = tree.getroot()
+ns = {"atom": "http://www.w3.org/2005/Atom"}
+
+for entry in root.findall("atom:entry", ns):
+    title = entry.find("atom:title", ns).text.strip().replace(":", "-")
+    abstract = entry.find("atom:summary", ns).text.strip()
+    authors = ", ".join(a.find("atom:name", ns).text for a in entry.findall("atom:author", ns))
+    link = entry.find("atom:link[@type='application/pdf']", ns).attrib["href"]
+    date = entry.find("atom:published", ns).text.split("T")[0]
+
+    # create markdown filename
+    safe_title = title.replace(" ", "-")[0:50]
+    filename = f"_papers/{date}-{safe_title}.md"
+
+    # skip if file already exists
+    if not os.path.exists(filename):
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(f'''---
+title: "{title}"
+authors: "{authors}"
+year: {date[0:4]}
+pdf: "{link}"
+abstract: "{abstract}"
+layout: paper
+---
+
+{abstract}
+''')
+EOF
+
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "github-actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add _papers/*.md
+        git commit -m "Update AI papers from arXiv" || echo "No new papers"
+        git push

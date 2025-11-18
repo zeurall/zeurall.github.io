@@ -1,0 +1,65 @@
+---
+layout: default
+title: Research
+---
+
+<style>
+/* ==== Styles only for Research Page ==== */
+
+.research-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.research-item {
+  margin-bottom: 3rem; /* BIG GAP */
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.research-item-title {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.research-item-title:hover {
+  text-decoration: underline;
+}
+
+.research-abstract {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+</style>
+
+<h1 class="research-title">Latest AI Research (from arXiv)</h1>
+
+<ul class="research-list">
+  {% assign papers = site.research %}
+  {% for paper in papers %}
+    <li class="research-item">
+      <a href="{{ paper.url | relative_url }}">
+        <h3 class="research-item-title">{{ paper.title }}</h3>
+      </a>
+      <p class="research-abstract">{{ paper.abstract | slice: 0, 200 }}...</p>
+    </li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+<div class="course-container">
+  <div class="course-nav-left">
+    <h3>Course Lessons</h3>
+    <ul>
+      {% assign lessons = site[page.collection] | sort: 'section' %}
+      {% for lesson in lessons %}
+        <li>
+          <a href="#" data-lesson-url="{{ lesson.url | relative_url }}">
+            {{ lesson.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="course-content" id="lesson-content">
+    {{ content }}
+  </div>
+
+  <div class="course-toc-right">
+    <h3>On this page</h3>
+    <ul id="toc"></ul>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const lessonLinks = document.querySelectorAll(".course-nav-left a");
+  const lessonContent = document.getElementById("lesson-content");
+  const toc = document.getElementById("toc");
+
+  // Load a lesson dynamically
+  function loadLesson(url) {
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+
+        // Extract .course-content block from the rendered page
+        const newContent = doc.querySelector('.course-content');
+        if (!newContent) return;
+
+        lessonContent.innerHTML = newContent.innerHTML;
+
+        // Build TOC
+        toc.innerHTML = "";
+        const headers = lessonContent.querySelectorAll("h2, h3");
+        headers.forEach(header => {
+          const id = header.textContent.trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, "-");
+
+          header.id = id;
+
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `#${id}`;
+          a.textContent = header.textContent;
+          li.appendChild(a);
+          toc.appendChild(li);
+        });
+
+      });
+  }
+
+  // Load the first lesson automatically
+  if (lessonLinks.length > 0) {
+    const firstLessonUrl = lessonLinks[0].getAttribute("data-lesson-url");
+    loadLesson(firstLessonUrl);
+  }
+
+  // On clicking lesson
+  lessonLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      const lessonUrl = this.getAttribute("data-lesson-url");
+      loadLesson(lessonUrl);
+    });
+  });
+
+});
+</script>

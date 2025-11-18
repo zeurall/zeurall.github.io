@@ -1,0 +1,27 @@
+---
+layout: null
+---
+{%- assign empty_array = "" | split: "" -%}
+{%- assign posts_collection = site.posts | default: empty_array -%}
+{%- assign github_collection = site.github | default: empty_array -%}
+{%- assign research_collection = site.research | default: empty_array -%}
+{%- assign mythology_collection = site.mythology | default: empty_array -%}
+{%- assign aws_collection = site.aws | default: empty_array -%}
+{%- assign js_collection = site.js | default: empty_array -%}
+{%- assign cpp_collection = site.cpp | default: empty_array -%}
+{%- assign c_collection = site.c | default: empty_array -%}
+
+{%- assign all_docs = posts_collection | concat: github_collection | concat: research_collection | concat: mythology_collection | concat: aws_collection | concat: js_collection | concat: cpp_collection | concat: c_collection -%}
+
+[
+  {% for doc in all_docs %}
+    {
+      "title": "{{ doc.title | escape }}",
+      "url": "{{ doc.url | relative_url }}",
+      "date": "{{ doc.date | date: '%B %d, %Y' }}",
+      "tags": "{{ doc.tags | join: ', ' }}",
+      "content": {{ doc.content | strip_html | strip_newlines | jsonify }}
+    }
+    {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
