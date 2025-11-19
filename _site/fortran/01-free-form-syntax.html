@@ -1,0 +1,213 @@
+<h3 id="what-is-fortran">What is Fortran?</h3>
+
+<p><strong>Fortran</strong> (short for <em>Formula Translation</em>) is a high-level programming language that revolutionized scientific computing. Originally developed by IBM in the 1950s, it became the first widely used language for numeric and scientific computation.</p>
+
+<p>While many programming languages have risen and faded, Fortran remains a core skill in high-performance computing (HPC)—a niche that powers some of the world’s most impactful and best-paid careers. Professionals fluent in modern Fortran often work in roles involving:
+-Climate modeling and weather prediction for space and defense agencies
+-Aerospace simulations used by NASA, Boeing, and SpaceX
+-Quantum chemistry and computational biology at cutting-edge research labs
+-Nuclear simulations and particle physics at CERN and national labs
+-Supercomputing clusters used at NVIDIA, Intel, and Top500 HPC centers
+-Mastering Fortran opens doors to elite research roles, internships, and industry offers—especially when combined with skills in CUDA, OpenMP, MPI, Julia, and C.</p>
+
+<p>Modern Fortran (90, 95, 2003, 2008, 2018, 2023) supports structured programming, modules, recursion, array slicing, and even parallelization via OpenMP and MPI.</p>
+
+<blockquote>
+  <p>Learning Fortran puts you in a powerful club of people who understand low-level optimization, array math, and performance engineering.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="fixed-form-vs-free-form-fortran">Fixed-form vs Free-form Fortran</h3>
+
+<p><strong>Fixed-form</strong> Fortran was used in earlier versions like Fortran 66 and 77, where:</p>
+<ul>
+  <li>Code had to be in <em>strict columns</em></li>
+  <li>Line numbers were written in columns 1–5</li>
+  <li>Code started at column 7</li>
+  <li>Comments used <code class="language-plaintext highlighter-rouge">C</code> or <code class="language-plaintext highlighter-rouge">*</code> in column 1</li>
+</ul>
+
+<p><strong>Free-form</strong> Fortran, introduced with <strong>Fortran 90</strong>, removed these restrictions:</p>
+<ul>
+  <li>No column limitations</li>
+  <li>Indentation allowed</li>
+  <li>Lowercase/uppercase interchangeable</li>
+  <li>Comments start with <code class="language-plaintext highlighter-rouge">!</code> anywhere on the line
+Free-form Fortran removes the rigid column-based structure of older Fortran versions (like Fortran 77). It lets you write readable code, use indentation, and structure your program like modern languages (Python, C, etc.).</li>
+</ul>
+
+<hr />
+
+<h3 id="comparison-table">Comparison Table</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Fixed-Form (old)</th>
+      <th>Free-Form (modern)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>File extension</td>
+      <td><code class="language-plaintext highlighter-rouge">.f</code>, <code class="language-plaintext highlighter-rouge">.for</code>, <code class="language-plaintext highlighter-rouge">.f77</code></td>
+      <td><code class="language-plaintext highlighter-rouge">.f90</code>, <code class="language-plaintext highlighter-rouge">.f95</code>, <code class="language-plaintext highlighter-rouge">.f03</code>, <code class="language-plaintext highlighter-rouge">.f08</code></td>
+    </tr>
+    <tr>
+      <td>Column-sensitive</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Indentation allowed?</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>End statements required?</td>
+      <td>Optional</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="-why-use-free-form-fortran">✅ Why Use Free-Form Fortran?</h3>
+
+<p>Free-form is the modern and recommended way to write Fortran. It enables:</p>
+<ul>
+  <li><strong>Cleaner syntax</strong> and indentation</li>
+  <li><strong>Readable blocks</strong> like Python or C</li>
+  <li><strong>Simpler debugging and maintenance</strong></li>
+  <li><strong>Better compatibility</strong> with modern compilers, IDEs, and version control</li>
+</ul>
+
+<hr />
+
+<h3 id="file-extensions-for-free-form">File Extensions for Free-Form</h3>
+
+<p>Use <code class="language-plaintext highlighter-rouge">.f90</code>, <code class="language-plaintext highlighter-rouge">.f95</code>, <code class="language-plaintext highlighter-rouge">.f03</code>, <code class="language-plaintext highlighter-rouge">.f08</code>, or <code class="language-plaintext highlighter-rouge">.f18</code> for free-form Fortran.<br />
+Avoid <code class="language-plaintext highlighter-rouge">.f</code>, <code class="language-plaintext highlighter-rouge">.for</code>, <code class="language-plaintext highlighter-rouge">.f77</code> unless you’re writing legacy, fixed-form code.</p>
+
+<hr />
+
+<h3 id="how-to-set-up">How to Set Up</h3>
+
+<p>To run free-form Fortran code, you need a <strong>modern compiler</strong>.<br />
+Popular choices:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Compiler</th>
+      <th>OS</th>
+      <th>Install Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">gfortran</code></td>
+      <td>Windows/Linux/Mac</td>
+      <td><code class="language-plaintext highlighter-rouge">sudo apt install gfortran</code> or via MSYS2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ifort</code></td>
+      <td>Intel’s Compiler</td>
+      <td>Part of Intel oneAPI (free tier)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">nvfortran</code></td>
+      <td>NVIDIA HPC SDK</td>
+      <td>Good for GPU + CPU Fortran</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can also use online compilers like:</p>
+<ul>
+  <li><a href="https://www.tutorialspoint.com/compile_fortran_online.php">TutorialsPoint Fortran Compiler</a></li>
+  <li><a href="https://rextester.com/l/fortran_online_compiler">Rextester</a></li>
+</ul>
+
+<hr />
+
+<h3 id="key-benefits">Key Benefits</h3>
+
+<ul>
+  <li>Use <strong>indentation</strong> like Python</li>
+  <li>Write <strong>comments anywhere</strong> with <code class="language-plaintext highlighter-rouge">!</code></li>
+  <li><strong>Lowercase and uppercase</strong> both work</li>
+  <li>You can write <strong>clean, readable code</strong></li>
+</ul>
+
+<hr />
+
+<p><strong>Syntax Basics</strong></p>
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">! This is a comment</span><span class="w">
+</span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">hello</span><span class="w">
+</span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hello, Fortran!"</span><span class="w">
+</span><span class="k">END</span><span class="w"> </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">hello</span><span class="w">
+</span></code></pre></div></div>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">PROGRAM hello</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">PROGRAM</code> marks the start of your program.</li>
+      <li><code class="language-plaintext highlighter-rouge">hello</code> is the <strong>name you give to your program</strong>. You can pick any valid name; it helps you (and the computer) keep things organized, especially when you have multiple programs.</li>
+      <li>The program name must match in <code class="language-plaintext highlighter-rouge">END PROGRAM hello</code> (it’s a best practice, though not always enforced).</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">PRINT *,</code> outputs to the console, similar to <code class="language-plaintext highlighter-rouge">print()</code> in Python or <code class="language-plaintext highlighter-rouge">printf</code> in C.</li>
+  <li><code class="language-plaintext highlighter-rouge">!</code> starts a comment—everything after <code class="language-plaintext highlighter-rouge">!</code> on a line is ignored by the compiler.</li>
+  <li>
+    <p>You do <strong>not</strong> need to worry about columns or spacing.</p>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">PROGRAM</code> and <code class="language-plaintext highlighter-rouge">END PROGRAM</code> define the main block</li>
+  <li><code class="language-plaintext highlighter-rouge">PRINT *,</code> prints to console (like <code class="language-plaintext highlighter-rouge">printf</code> or <code class="language-plaintext highlighter-rouge">print</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">!</code> denotes a comment<br />
+ No need for specific columns<br />
+ Multiple spaces allowed<br />
+ Lowercase or uppercase both work</li>
+</ul>
+
+<hr />
+
+<p><strong>Example 1: Hello World</strong></p>
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">PROGRAM</span><span class="w"> </span><span class="n">hello</span><span class="w">
+</span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hello, world!"</span><span class="w">
+</span><span class="k">END</span><span class="w"> </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">hello</span><span class="w">
+</span></code></pre></div></div>
+<p>Run it online here:<br />
+ <a href="https://www.tutorialspoint.com/compile_fortran_online.php">https://www.tutorialspoint.com/compile_fortran_online.php</a></p>
+
+<p><strong>Expected Output:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hello, world!
+</code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hello</code> in <code class="language-plaintext highlighter-rouge">PROGRAM hello</code> is just a name for your program. You could call it <code class="language-plaintext highlighter-rouge">main</code>, <code class="language-plaintext highlighter-rouge">test</code>, or anything you like (no spaces, must start with a letter).</li>
+</ul>
+
+<hr />
+
+<p><strong>Example 2: Comments and Whitespace</strong></p>
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">PROGRAM</span><span class="w"> </span><span class="n">test_comments</span><span class="w">
+</span><span class="c1">! This is a comment</span><span class="w">
+</span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">"Testing spacing"</span><span class="w">
+</span><span class="k">PRINT</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">" Spacing doesn't matter here!"</span><span class="w">
+</span><span class="k">END</span><span class="w"> </span><span class="k">PROGRAM</span><span class="w"> </span><span class="n">test_comments</span><span class="w">
+</span></code></pre></div></div>
+<p>Output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Testing spacing
+Spacing doesn't matter here!
+</code></pre></div></div>
+
+<hr />
+
+<p><strong>Questions</strong></p>
+<ul>
+  <li>Q1. What symbol is used to start a comment in free-form Fortran?</li>
+  <li>Q2. What happens if you write Fortran keywords in lowercase (e.g., <code class="language-plaintext highlighter-rouge">program</code>, <code class="language-plaintext highlighter-rouge">print</code>)?</li>
+</ul>

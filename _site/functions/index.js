@@ -1,4 +1,3 @@
-
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const express = require('express');
@@ -10,24 +9,14 @@ admin.initializeApp();
 const app = express();
 app.use(cors({ origin: true }));
 
+// Get your Gemini API key from Firebase environment variables
 const geminiApiKey = functions.config().gemini.key;
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
-app.post('/api/chat', async (req, res) => {
+app.post('/chat', async (req, res) => {
     try {
         const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-        
-        const userMessage = req.body.contents;
-        const pageContext = req.body.context;
-
-        let prompt;
-        if (pageContext) {
-            prompt = `You answer ONLY using the content of this research paper: ${pageContext}\n\nUser Question: ${userMessage}`;
-        } else {
-            prompt = userMessage;
-        }
-
-        const result = await model.generateContent(prompt);
+        const result = await model.generateContent(req.body.contents);
         res.json(result.response);
     } catch (error) {
         console.error('Error in Gemini API call:', error);

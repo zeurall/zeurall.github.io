@@ -1,0 +1,109 @@
+[debug] [2025-11-18T18:03:34.982Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T18:03:34.985Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js functions:config:set gemini.key=AIzaSyCyc_n34uG5a9VOIylwrUHFuOy8WwjDJ9g
+[debug] [2025-11-18T18:03:34.986Z] CLI Version:   14.22.0
+[debug] [2025-11-18T18:03:34.986Z] Platform:      linux
+[debug] [2025-11-18T18:03:34.986Z] Node Version:  v20.19.1
+[debug] [2025-11-18T18:03:34.986Z] Time:          Tue Nov 18 2025 18:03:34 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-18T18:03:34.986Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T18:03:35.479Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:03:35.479Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:03:35.484Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-18T18:03:36.305Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-18T18:03:36.306Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-18T16:56:32.644249Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM0ODkwMTYsImV4cCI6MTc2MzU3NTQxNn0.r9AtK_IOZNunMkfggx92LadvKZg8A71tukWos5EMzuYAo7e5RgaPOZkwcuZJjZXDEU-WYF7JmOg828ZddtqPlS5oYMxDLWI_rQABa6jxRxxqcWCUYimDcSOgi7RIGMzTk2jhQY1T-LjWyY-h9yfkLhJFWeU3jnNC_-aocabOSHZTJzqqRPhdB-9BNVrphdi0A3lrakwvVo8BrzfEB1NLYOYFEO3eA_QAhVtg-BK5SolzEVlyjQo8whPkredUagUMgSudarh78S-YCWX65NHBFpCsmc1uu1Xtx_JtJFVAmmMgVNBh2f74lW6vrOwd8TsgF9bRjIFXoceLSRDoAAGxvw","firebaseProjectId":"zeurallgithubio-12980591-41501"}
+[debug] [2025-11-18T18:11:28.586Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T18:11:28.589Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only functions:api
+[debug] [2025-11-18T18:11:28.590Z] CLI Version:   14.22.0
+[debug] [2025-11-18T18:11:28.590Z] Platform:      linux
+[debug] [2025-11-18T18:11:28.590Z] Node Version:  v20.19.1
+[debug] [2025-11-18T18:11:28.590Z] Time:          Tue Nov 18 2025 18:11:28 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-18T18:11:28.590Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T18:11:29.089Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:11:29.089Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:11:29.094Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-18T18:11:29.980Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-18T18:11:29.981Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-18T16:56:32.644249Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM0ODk0ODksImV4cCI6MTc2MzU3NTg4OX0.bDbHf4-vUtXt-KQvZQQpSBu2ilPmcFHxh8exzufMWGCewSmw3fEClJmpC1SfFuIWkTjGghsBMrUnUeYquEJHC0U_XPBN-KMePnsebTUAFHl0dvMzEnXaHkpHJkE2nYOVdRO-pfOgIvHFbwu_VAs40s-q9JTAXD3jtkpqNAWOlVIGTJquDiG0SnyJMd_HkaqqH8elcRryAGu7AiYgPRQ1Bg59xszItOKb4bW07wZ2Ohsv6CdnBOKnR-1qGvVCXmb3kd7SerdF8PunVVfJEcetVM8jmzHSfvJyMp2V5YJvObCLARxbqR0-YsOh3d4IRxKetS14rX2gKIc9BYnGgFmyLA","firebaseProjectId":"zeurallgithubio-12980591-41501"}
+[debug] [2025-11-18T18:18:00.107Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T18:18:00.111Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy
+[debug] [2025-11-18T18:18:00.112Z] CLI Version:   14.22.0
+[debug] [2025-11-18T18:18:00.112Z] Platform:      linux
+[debug] [2025-11-18T18:18:00.112Z] Node Version:  v20.19.1
+[debug] [2025-11-18T18:18:00.113Z] Time:          Tue Nov 18 2025 18:18:00 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-18T18:18:00.113Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T18:18:00.654Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:18:00.654Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:18:00.659Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-18T18:18:01.571Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-18T18:18:01.573Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-18T16:56:32.644249Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM0ODk4ODEsImV4cCI6MTc2MzU3NjI4MX0.G11xUTH5-iCFgYI4V-qmdnv27tUeEh9BXxxthEPydPW0JxlSNpm6UfEERwHDb5kZNpQBk_8o804_MwKNGrzSjqeKVwxGshhvhtORshHJxKK_cGg1sXNr6RWTxn057MrRdv7ERnqktra-rSOlyYfvH5-18uhk7VoM7qyH3UUbozbGyNmvKLAAtP31seWPr6t1KwHgRCvdOv2npZwpFiaDpqZXa-B7fW6YFOyML234-UjvoEGRPuyzIBUhdKpOJZn2nmHyLtFIWSXdKx6nrwYRebtx-wIOhnaXZDNUKGdp9WLTwhE-t_XkWOYS0zitAco68zVoFQKtVCOGGfMXL9ar_g","firebaseProjectId":"zeurallgithubio-12980591-41501"}
+[debug] [2025-11-18T18:22:47.908Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T18:22:47.911Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy
+[debug] [2025-11-18T18:22:47.912Z] CLI Version:   14.22.0
+[debug] [2025-11-18T18:22:47.912Z] Platform:      linux
+[debug] [2025-11-18T18:22:47.912Z] Node Version:  v20.19.1
+[debug] [2025-11-18T18:22:47.912Z] Time:          Tue Nov 18 2025 18:22:47 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-18T18:22:47.913Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T18:22:48.436Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-18T18:22:48.437Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-18T18:22:48.437Z] Field "/functions/0/runtime" in "firebase.json" is possibly invalid: must be equal to one of the allowed values
+[debug] [2025-11-18T18:22:48.437Z] Object "/functions/0" in "firebase.json" is missing required property: {"missingProperty":"remoteSource"}
+[debug] [2025-11-18T18:22:48.437Z] Field "/functions/0" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-18T18:22:48.438Z] Field "/functions" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-18T18:22:48.440Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:22:48.441Z] Checked if tokens are valid: true, expires at: 1763492543028
+[debug] [2025-11-18T18:22:48.445Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-18T18:22:49.285Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-18T18:22:49.285Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-18T16:56:32.644249Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM0OTAxNjksImV4cCI6MTc2MzU3NjU2OX0.t_Q0vYprx_kVxbm9lqnraiSxQZLtwZAq1Fc5owwsYuEWS3zH8zPVdFt7NxpDYQjbmQFB9joyG5IJnieF5J1tsshSWP4ffIV_OPWETGOccL2i-1wD_qKpfEocSUhoTT4X-L6R6O4VV3AWUOnavJVhW-42F-JpiJR9u4tZxJ0Js5zSaB6dTx3g3vPgVKhR9XPZB3gDkBiBV5wq8zpzIdxWGsk_OsoQobXWAWSh6bPjWgex805rv6oO3s57ljG6Frhyq1t_X6pCjMqPk9HbuMTtCjxEfyhQ6mwy5Xl_A8K3B5zmC34kewh05DLWq1rDKYh4Sf0K0qqonZ_Ed2Aujic2Fg","firebaseProjectId":"zeurallgithubio-12980591-41501"}
+[debug] [2025-11-19T15:45:31.413Z] ----------------------------------------------------------------------
+[debug] [2025-11-19T15:45:31.417Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only functions:api
+[debug] [2025-11-19T15:45:31.417Z] CLI Version:   14.22.0
+[debug] [2025-11-19T15:45:31.418Z] Platform:      linux
+[debug] [2025-11-19T15:45:31.418Z] Node Version:  v20.19.1
+[debug] [2025-11-19T15:45:31.418Z] Time:          Wed Nov 19 2025 15:45:31 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-19T15:45:31.418Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-19T15:45:31.954Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-19T15:45:31.954Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-19T15:45:31.954Z] Field "/functions/0/runtime" in "firebase.json" is possibly invalid: must be equal to one of the allowed values
+[debug] [2025-11-19T15:45:31.955Z] Object "/functions/0" in "firebase.json" is missing required property: {"missingProperty":"remoteSource"}
+[debug] [2025-11-19T15:45:31.955Z] Field "/functions/0" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-19T15:45:31.955Z] Field "/functions" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-19T15:45:31.958Z] Checked if tokens are valid: false, expires at: 1763492543028
+[debug] [2025-11-19T15:45:31.958Z] Checked if tokens are valid: false, expires at: 1763492543028
+[debug] [2025-11-19T15:45:31.959Z] > refreshing access token with scopes: []
+[debug] [2025-11-19T15:45:31.962Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-19T15:45:31.962Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-19T15:45:32.076Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-19T15:45:32.077Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-19T15:45:32.092Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-19T15:45:32.966Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-19T15:45:32.967Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-19T15:44:16.588406Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM1NjcxMzIsImV4cCI6MTc2MzY1MzUzMn0.tpPr7JXsrX91x-GFBQl1KO0itOGaRMzPybhDHjIDHXD9bOJxWKKoRJMivEWI2KtfAV3irWlaFCaEyHbm07v7Yi-YmwZLozi1zTk2Pjhb9zetqr2OqOdvAxa6gwGTSyU2Add6Gk8_RAr1eBzy9tB4RspvZDj4AbZGb6s4g8c368PD2qH9HJxKeb-qo0owVzEjcTxtAlaS9N_NetGL702Uhyuilxv5b-6ESm0fkiO-cQ3ngk0bl6kGzZSN__Z2j7dSawpKBPmzPFcKzqj91CSOSXvR2xeFtsbW-onE3eIXh2B83VLWznWiwz6I9t5eF9bQQi-irG0uo5B1R54ja12TFg","firebaseProjectId":"zeurallgithubio-12980591-41501"}
+[debug] [2025-11-19T17:22:40.992Z] ----------------------------------------------------------------------
+[debug] [2025-11-19T17:22:40.996Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy
+[debug] [2025-11-19T17:22:40.997Z] CLI Version:   14.22.0
+[debug] [2025-11-19T17:22:40.997Z] Platform:      linux
+[debug] [2025-11-19T17:22:40.998Z] Node Version:  v20.19.1
+[debug] [2025-11-19T17:22:40.998Z] Time:          Wed Nov 19 2025 17:22:40 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-19T17:22:40.998Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-19T17:22:41.003Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-11-19T17:22:41.729Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-19T17:22:41.730Z] Field "/functions" in "firebase.json" is possibly invalid: must be object
+[debug] [2025-11-19T17:22:41.730Z] Field "/functions/0/runtime" in "firebase.json" is possibly invalid: must be equal to one of the allowed values
+[debug] [2025-11-19T17:22:41.731Z] Object "/functions/0" in "firebase.json" is missing required property: {"missingProperty":"remoteSource"}
+[debug] [2025-11-19T17:22:41.731Z] Field "/functions/0" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-19T17:22:41.731Z] Field "/functions" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-11-19T17:22:41.736Z] Checked if tokens are valid: false, expires at: 1763570731077
+[debug] [2025-11-19T17:22:41.736Z] Checked if tokens are valid: false, expires at: 1763570731077
+[debug] [2025-11-19T17:22:41.737Z] > refreshing access token with scopes: []
+[debug] [2025-11-19T17:22:41.740Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-19T17:22:41.741Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-19T17:22:41.822Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-19T17:22:41.824Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-19T17:22:41.842Z] >>> [apiv2][query] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 [none]
+[debug] [2025-11-19T17:22:42.088Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-11-19T17:22:42.088Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-11-19T17:22:42.623Z] <<< [apiv2][status] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 200
+[debug] [2025-11-19T17:22:42.623Z] <<< [apiv2][body] GET https://monospace-pa.googleapis.com/v1/workspaces/zeurallgithubio-12980591 {"workspaceId":"zeurallgithubio-12980591","name":"zeurall.github.io","workspaceRedirectUrl":"firebase-zeurallgithubio-1763483233627.cluster-xpmcxs2fjnhg6xvn446ubtgpio.cloudworkstations.dev","status":"WORKSPACE_STATUS_RUNNING","lastAccessDatetime":"2025-11-19T17:19:35.712700Z","workspaceTemplate":"WORKSPACE_TEMPLATE_BLANK_WEB","owner":"SELF","serviceAccountEmail":"msp-7215351433179379449@monospace-per-ws-sa-10.iam.gserviceaccount.com","gitRepoUrl":"https://github.com/zeurall/zeurall.github.io","enableNix":true,"ownerEmail":"ladyexquisito@gmail.com","workstationAccessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2Nsb3VkLmdvb2dsZS5jb20vd29ya3N0YXRpb25zIiwiYXVkIjoiZmlyZWJhc2UtemV1cmFsbGdpdGh1YmlvLTE3NjM0ODMyMzM2MjcuY2x1c3Rlci14cG1jeHMyZmpuaGc2eHZuNDQ2dWJ0Z3Bpby5jbG91ZHdvcmtzdGF0aW9ucy5kZXYiLCJpYXQiOjE3NjM1NzI5NjIsImV4cCI6MTc2MzY1OTM2Mn0.yEfMzW1Z-vmUmPAjJn44rt7Hm2mtngGFSXL3qrQfDjenL6HLIB8pomqV_Vz8V93qbI2uQP6iZGqPcnc1_YPg__d6AzSzAJC0MLkC-vWzWZUnfH_1LQNWsN4cexL3HuQFhqlDlXg-FjV5nHbaX11E4ysj0O7m9pRGlNot6c0GGFXA1Y12OJgzL0CApD5jk4HIzdhRUn6OPZ0GelplyDV_7NkOetqIgfgyrLTiEORKACrDs4KzLm87EWy7Xlgyzs3Y9-jr8GIoveFNqVll4bMYRqsWMei70gafw6Ke5MCHvsWehgjRCH8396iW23HMniF5xj_ZGYLtYV18AdJMMmwVIg","firebaseProjectId":"zeurallgithubio-12980591-41501"}

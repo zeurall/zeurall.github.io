@@ -17,7 +17,7 @@ search = arxiv.Search(
 for result in search.results():
     # Create a dictionary for the front matter
     front_matter = {
-        'layout': 'paper',
+        'layout': 'research_post',
         'title': result.title,
         'authors': [author.name for author in result.authors],
         'year': result.published.year,
@@ -29,7 +29,10 @@ for result in search.results():
     front_matter_yaml = yaml.dump(front_matter)
 
     # Create the markdown file content
-    markdown_content = f"---\n{front_matter_yaml}---\n"
+    markdown_content = f"""---
+{front_matter_yaml}---
+{result.summary}
+"""
 
     # Create the markdown file name
     file_name = f"{result.entry_id.split('/')[-1]}.md"

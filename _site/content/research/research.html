@@ -52,9 +52,136 @@
                                       
                                         <!-- Main page content -->
                                           <main class="content-padding">
-                                              <h1>Research</h1>
+                                              <style>
+/* ==== Styles only for Research Page ==== */
 
-<p>This is the research page.</p>
+.research-title {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.research-item {
+  margin-bottom: 3rem; /* BIG GAP */
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.research-item-title {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.research-item-title:hover {
+  text-decoration: underline;
+}
+
+.research-abstract {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+}
+</style>
+
+<h1 class="research-title">Latest AI Research (from arXiv)</h1>
+
+<ul class="research-list">
+  
+  
+    <li class="research-item">
+      <a href="/research/2511.11480v1.html">
+        <h3 class="research-item-title">Inferring response times of perceptual decisions with Poisson variational autoencoders</h3>
+      </a>
+      <p class="research-abstract">Many properties of perceptual decision making are well-modeled by deep neural networks. However, such architectures typically treat decisions as instantaneous readouts, overlooking the temporal dynami...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11483v1.html">
+        <h3 class="research-item-title">ImAgent: A Unified Multimodal Agent Framework for Test-Time Scalable Image Generation</h3>
+      </a>
+      <p class="research-abstract">Recent text-to-image (T2I) models have made remarkable progress in generating visually realistic and semantically coherent images. However, they still suffer from randomness and inconsistency with the...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11490v1.html">
+        <h3 class="research-item-title">Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models</h3>
+      </a>
+      <p class="research-abstract">In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural ...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11502v1.html">
+        <h3 class="research-item-title">PAS : Prelim Attention Score for Detecting Object Hallucinations in Large Vision--Language Models</h3>
+      </a>
+      <p class="research-abstract">Large vision-language models (LVLMs) are powerful, yet they remain unreliable due to object hallucinations. In this work, we show that in many hallucinatory predictions the LVLM effectively ignores th...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11519v1.html">
+        <h3 class="research-item-title">Experience-Guided Adaptation of Inference-Time Reasoning Strategies</h3>
+      </a>
+      <p class="research-abstract">Enabling agentic AI systems to adapt their problem-solving approaches based on post-training interactions remains a fundamental challenge. While systems that update and maintain a memory at inference ...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11533v1.html">
+        <h3 class="research-item-title">Volumetric Ergodic Control</h3>
+      </a>
+      <p class="research-abstract">Ergodic control synthesizes optimal coverage behaviors over spatial distributions for nonlinear systems. However, existing formulations model the robot as a non-volumetric point, but in practice a rob...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11551v1.html">
+        <h3 class="research-item-title">Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping</h3>
+      </a>
+      <p class="research-abstract">The deployment of decision-making AI agents presents a critical challenge in maintaining alignment with human values or guidelines while operating in complex, dynamic environments. Agents trained sole...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11558v1.html">
+        <h3 class="research-item-title">Human-AI collaborative autonomous synthesis with pulsed laser deposition for remote epitaxy</h3>
+      </a>
+      <p class="research-abstract">Autonomous laboratories typically rely on data-driven decision-making, occasionally with human-in-the-loop oversight to inject domain expertise. Fully leveraging AI agents, however, requires tightly c...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11560v1.html">
+        <h3 class="research-item-title">A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication</h3>
+      </a>
+      <p class="research-abstract">In semi-decentralized federated learning, devices primarily rely on device-to-device communication but occasionally interact with a central server. Periodically, a sampled subset of devices uploads th...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/2511.11569v1.html">
+        <h3 class="research-item-title">Private Frequency Estimation Via Residue Number Systems</h3>
+      </a>
+      <p class="research-abstract">We present \textsf{ModularSubsetSelection} (MSS), a new algorithm for locally differentially private (LDP) frequency estimation. Given a universe of size $k$ and $n$ users, our $\varepsilon$-LDP mecha...</p>
+    </li>
+  
+    <li class="research-item">
+      <a href="/research/sample_paper.html">
+        <h3 class="research-item-title">A Sample Research Paper</h3>
+      </a>
+      <p class="research-abstract">This is the abstract of a sample research paper. It is intended to demonstrate how research papers will be displayed on the website....</p>
+    </li>
+  
+</ul>
 
                                                 </main>
                                                 

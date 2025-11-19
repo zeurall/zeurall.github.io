@@ -3,9 +3,15 @@
     "public": "_site",
     "rewrites": [
       {
-        "source": "/api/chat",
+        "source": "/api/**",
         "function": "api"
       }
     ]
-  }
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "runtime": "nodejs16"
+    }
+  ]
 }

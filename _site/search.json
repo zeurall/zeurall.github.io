@@ -1,191 +1,227 @@
 [
   
     {
-      "title": "Neural Networks: The Backbone of AI",
-      "url": "/2025/10/06/neural-networks.html",
-      "date": "October 06, 2025",
-      "tags": "Neural Networks, Deep Learning, AI",
-      "content": "Neural networks are the fundamental building blocks of modern AI. Inspired by the human brain, they consist of layers of interconnected nodes capable of learning patterns from data.Applications range from image and speech recognition to autonomous systems and predictive analytics. As neural network architectures evolve, they continue to unlock unprecedented possibilities in AI research and practical solutions."
-    }
-    ,
-  
-    {
-      "title": "ChatGPT and the AI Revolution",
-      "url": "/2025/10/05/chatgpt.html",
-      "date": "October 05, 2025",
-      "tags": "ChatGPT, AI, Natural Language Processing",
-      "content": "ChatGPT represents a major milestone in natural language processing. Built on large language models, it can generate human-like text, answer complex questions, and assist in creative writing and coding.This technology is transforming industries like customer support, education, and content creation. As AI becomes more advanced, tools like ChatGPT demonstrate the potential of machines to understand and interact with human language seamlessly."
-    }
-    ,
-  
-    {
       "title": "M-Theory: The Quest for a Unified Theory",
-      "url": "/2025/10/04/m-theory.html",
-      "date": "October 04, 2025",
+      "url": "/2025/11/17/m-theory.html",
+      "date": "November 17, 2025",
       "tags": "M-Theory, Physics, Cosmology",
       "content": "M-Theory represents a bold attempt to unify all fundamental forces of nature into a single framework. It extends string theory by introducing higher-dimensional objects called branes, potentially explaining the fabric of the universe.Although still theoretical, M-Theory has profound implications for understanding black holes, quantum gravity, and the origin of the cosmos. Physicists continue to explore its complex mathematics and connections to observable phenomena."
     }
     ,
   
     {
+      "title": "Exploring Dark Matter",
+      "url": "/2025/11/17/dark-matter.html",
+      "date": "November 17, 2025",
+      "tags": "Dark Matter, Physics, Research",
+      "content": "Dark matter is one of the most mysterious components of our universe. Recent experiments have revealed fascinating clues about its properties.."
+    }
+    ,
+  
+    {
+      "title": "The Zeural Platform",
+      "url": "/2025/11/16/zeural-platform.html",
+      "date": "November 16, 2025",
+      "tags": "Zeural, EdTech, Open Source",
+      "content": "Zeural is a revolutionary open-source platform aimed at providing high-quality coding and technology education. With a focus on community-driven learning, it allows enthusiasts from around the globe to contribute, learn, and grow together. The platform covers a wide range of topics from AI, machine learning, robotics, and beyond, offering elegant paths to mastery.Through structured content and interactive exercises, learners gain practical experience while collaborating on real projects. Zeural exemplifies the power of open-source initiatives in shaping the next generation of tech innovators.."
+    }
+    ,
+  
+    {
       "title": "Exploring Robotics",
-      "url": "/2025/10/03/robotics.html",
-      "date": "October 03, 2025",
+      "url": "/2025/11/16/robotics.html",
+      "date": "November 16, 2025",
       "tags": "Robotics, AI, Automation",
       "content": "Robotics is rapidly evolving with the integration of AI and machine learning. Modern robots can navigate complex environments, interact with humans safely, and perform intricate tasks in manufacturing, healthcare, and exploration.From autonomous drones to humanoid robots, the field is driven by innovation in sensors, actuators, and intelligent algorithms. Robotics research continues to enhance efficiency, safety, and versatility across industries worldwide."
     }
     ,
   
     {
-      "title": "Exploring Dark Matter",
-      "url": "/2025/10/03/dark-matter.html",
-      "date": "October 03, 2025",
-      "tags": "Dark Matter, Physics, Research",
-      "content": "Dark matter is one of the most mysterious components of our universe. Recent experiments have revealed fascinating clues about its properties…"
+      "title": "Neural Networks: The Backbone of AI",
+      "url": "/2025/11/16/neural-networks.html",
+      "date": "November 16, 2025",
+      "tags": "Neural Networks, Deep Learning, AI",
+      "content": "Neural networks are the fundamental building blocks of modern AI. Inspired by the human brain,they consist of layers of interconnected nodes capable of learning patterns from data.Applications range from image and speech recognition to autonomous systems and predictive analytics. As neural network architectures evolve, they continue to unlock unprecedented possibilities in AI research and practical solutions."
     }
     ,
   
     {
       "title": "Advancements in Computer Vision",
-      "url": "/2025/10/02/computer-vision.html",
-      "date": "October 02, 2025",
+      "url": "/2025/11/16/computer-vision.html",
+      "date": "November 16, 2025",
       "tags": "Computer Vision, AI, Deep Learning",
       "content": "Computer vision has transformed the way machines interpret the world. By leveraging convolutional neural networks and modern AI techniques, machines can now recognize faces, analyze medical images, detect objects, and even understand complex scenes.From autonomous vehicles to augmented reality applications, computer vision plays a critical role in bridging the gap between humans and machines. Continuous research in this field is pushing the boundaries of what is possible in automation and intelligent systems."
     }
     ,
   
     {
-      "title": "The Alzeural Platform",
-      "url": "/2025/10/01/alzeural-platform.html",
-      "date": "October 01, 2025",
-      "tags": "Alzeural, EdTech, Open Source",
-      "content": "Alzeural is a revolutionary open-source platform aimed at providing high-quality coding and technology education. With a focus on community-driven learning, it allows enthusiasts from around the globe to contribute, learn, and grow together. The platform covers a wide range of topics from AI, machine learning, robotics, and beyond, offering elegant paths to mastery.Through structured content and interactive exercises, learners gain practical experience while collaborating on real projects. Alzeural exemplifies the power of open-source initiatives in shaping the next generation of tech innovators."
+      "title": "ChatGPT and the AI Revolution",
+      "url": "/2025/11/16/chatgpt.html",
+      "date": "November 16, 2025",
+      "tags": "ChatGPT, AI, Natural Language Processing",
+      "content": "ChatGPT represents a major milestone in natural language processing. Built on large language models, it can generate human-like text, answer complex questions, and assist in creative writing and coding.This technology is transforming industries like customer support, education, and content creation. As AI becomes more advanced, tools like ChatGPT demonstrate the potential of machines to understand and interact with human language seamlessly."
     }
     ,
   
     {
-      "title": "Welcome to My Blog!",
-      "url": "/jekyll/update/2023/10/27/welcome-to-my-blog.html",
-      "date": "October 27, 2023",
-      "tags": "",
-      "content": "This is my first blog post. I’m excited to share my thoughts with you!"
-    }
-    ,
-  
-    {
-      "title": "Introduction to GitHub",
+      "title": "Getting Started with GitHub! 🚀",
       "url": "/github/01-introduction.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": "This is the first lesson in the GitHub course. Here, you will learn the basics of what GitHub is and why it is so important for developers."
+      "content": "Hey everyone! 👋 Today, we’re diving into the wonderful world of GitHub. If you’re new to coding or have been coding for a while but never quite figured out what GitHub is all about, you’re in the right place! 🤓What is GitHub? 🤔At its heart, GitHub is a platform for version control and collaboration. It lets you and others work together on projects from anywhere. Think of it like a super-powered Google Docs for your code. 👨‍💻Key Concepts 🔑  Repository (Repo): This is your project’s folder. It contains all of your project’s files and stores each file’s revision history. Your zeural1.github.io repository is a great example!  Commit: A commit is like a snapshot of your project at a specific point in time. When you make a change and commit it, you’re saving a new version of your work. 💾  Branch: A branch is a parallel version of your repository. You can create branches to work on new features without affecting the main version of your project (often called the main branch). 🌿  Pull Request (PR): When you’re ready to merge your changes from a branch into the main project, you open a pull request. This allows others to review your changes before they’re added to the main codebase. It’s a great way to collaborate and get feedback. 💬  Git: Git is the version control system that GitHub is built on. It’s a command-line tool that you can use to interact with your local and remote repositories.Why use GitHub? 💡  Collaboration: GitHub makes it easy to work with others on projects, whether they’re your friends, colleagues, or open-source contributors from around the world. 🌍  Version Control:  Never worry about losing your work or messing up your code again! With GitHub, you can always revert to a previous version of your project.  Showcase your work: Your GitHub profile can serve as a portfolio to showcase your skills and projects to potential employers. 💼I hope this brief introduction was helpful! In future posts, we’ll dive deeper into some of these concepts and explore more of what GitHub has to offer. Happy coding! 🤗"
     }
     ,
   
     {
-      "title": "Lesson 1: Introduction to GitHub",
-      "url": "/github/01_introduction.html",
-      "date": "November 17, 2025",
-      "tags": "",
-      "content": "Lesson 1: Introduction to GitHubThis is a placeholder for the lesson content."
-    }
-    ,
-  
-    {
-      "title": "Basic Git Commands",
+      "title": "Getting Started with GitHub! 🚀",
       "url": "/github/02-basic-commands.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": "In this lesson, you will learn the most essential Git commands that you will use every day, such as git add, git commit, and git push."
+      "content": "Hey everyone! 👋 Today, we’re diving into the wonderful world of GitHub. If you’re new to coding or have been coding for a while but never quite figured out what GitHub is all about, you’re in the right place! 🤓What is GitHub? 🤔At its heart, GitHub is a platform for version control and collaboration. It lets you and others work together on projects from anywhere. Think of it like a super-powered Google Docs for your code. 👨‍💻Key Concepts 🔑  Repository (Repo): This is your project’s folder. It contains all of your project’s files and stores each file’s revision history. Your zeural1.github.io repository is a great example!  Commit: A commit is like a snapshot of your project at a specific point in time. When you make a change and commit it, you’re saving a new version of your work. 💾  Branch: A branch is a parallel version of your repository. You can create branches to work on new features without affecting the main version of your project (often called the main branch). 🌿  Pull Request (PR): When you’re ready to merge your changes from a branch into the main project, you open a pull request. This allows others to review your changes before they’re added to the main codebase. It’s a great way to collaborate and get feedback. 💬  Git: Git is the version control system that GitHub is built on. It’s a command-line tool that you can use to interact with your local and remote repositories.Why use GitHub? 💡  Collaboration: GitHub makes it easy to work with others on projects, whether they’re your friends, colleagues, or open-source contributors from around the world. 🌍  Version Control:  Never worry about losing your work or messing up your code again! With GitHub, you can always revert to a previous version of your project.  Showcase your work: Your GitHub profile can serve as a portfolio to showcase your skills and projects to potential employers. 💼I hope this brief introduction was helpful! In future posts, we’ll dive deeper into some of these concepts and explore more of what GitHub has to offer. Happy coding! 🤗"
     }
     ,
   
     {
       "title": "Inferring response times of perceptual decisions with Poisson variational autoencoders",
       "url": "/research/2511.11480v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Many properties of perceptual decision making are well-modeled by deep neural networks. However, such architectures typically treat decisions as instantaneous readouts, overlooking the temporal dynamics of the decision process. We present an image-computable model of perceptual decision making in which choices and response times arise from efficient sensory encoding and Bayesian decoding of neural spiking activity. We use a Poisson variational autoencoder to learn unsupervised representations of visual stimuli in a population of rate-coded neurons, modeled as independent homogeneous Poisson processes. A task-optimized decoder then continually infers an approximate posterior over actions conditioned on incoming spiking activity. Combining these components with an entropy-based stopping rule yields a principled and image-computable model of perceptual decisions capable of generating trial-by-trial patterns of choices and response times.Applied to MNIST digit classification, the model reproduces key empirical signatures of perceptual decision making, including stochastic variability, right-skewed response time distributions, logarithmic scaling of response times with the number of alternatives (Hick’s law), and speed-accuracy trade-offs."
     }
     ,
   
     {
       "title": "ImAgent: A Unified Multimodal Agent Framework for Test-Time Scalable Image Generation",
       "url": "/research/2511.11483v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Recent text-to-image (T2I) models have made remarkable progress in generating visually realistic and semantically coherent images. However, they still suffer from randomness and inconsistency with the given prompts, particularly when textual descriptions are vague or underspecified. Existing approaches, such as prompt rewriting, best-of-N sampling, and self-refinement, can mitigate these issues but usually require additional modules and operate independently, hindering test-time scaling efficiency and increasing computational overhead. In this paper, we introduce ImAgent, a training-free unified multimodal agent that integrates reasoning, generation, and self-evaluation within a single framework for efficient test-time scaling. Guided by a policy controller, multiple generation actions dynamically interact and self-organize to enhance image fidelity and semantic alignment without relying on external models. Extensive experiments on image generation and editing tasks demonstrate that ImAgent consistently improves over the backbone and even surpasses other strong baselines where the backbone model fails, highlighting the potential of unified multimodal agents for adaptive and efficient image generation under test-time scaling."
     }
     ,
   
     {
       "title": "Intrinsic Dimension Estimation for Radio Galaxy Zoo using Diffusion Models",
       "url": "/research/2511.11490v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "In this work, we estimate the intrinsic dimension (iD) of the Radio Galaxy Zoo (RGZ) dataset using a score-based diffusion model. We examine how the iD estimates vary as a function of Bayesian neural network (BNN) energy scores, which measure how similar the radio sources are to the MiraBest subset of the RGZ dataset. We find that out-of-distribution sources exhibit higher iD values, and that the overall iD for RGZ exceeds those typically reported for natural image datasets. Furthermore, we analyse how iD varies across Fanaroff-Riley (FR) morphological classes and as a function of the signal-to-noise ratio (SNR). While no relationship is found between FR I and FR II classes, a weak trend toward higher SNR at lower iD. Future work using the RGZ dataset could make use of the relationship between iD and energy scores to quantitatively study and improve the representations learned by various self-supervised learning algorithms."
     }
     ,
   
     {
       "title": "PAS : Prelim Attention Score for Detecting Object Hallucinations in Large Vision--Language Models",
       "url": "/research/2511.11502v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Large vision-language models (LVLMs) are powerful, yet they remain unreliable due to object hallucinations. In this work, we show that in many hallucinatory predictions the LVLM effectively ignores the image and instead relies on previously generated output (prelim) tokens to infer new objects. We quantify this behavior via the mutual information between the image and the predicted object conditioned on the prelim, demonstrating that weak image dependence strongly correlates with hallucination. Building on this finding, we introduce the Prelim Attention Score (PAS), a lightweight, training-free signal computed from attention weights over prelim tokens. PAS requires no additional forward passes and can be computed on the fly during inference. Exploiting this previously overlooked signal, PAS achieves state-of-the-art object-hallucination detection across multiple models and datasets, enabling real-time filtering and intervention."
     }
     ,
   
     {
       "title": "Experience-Guided Adaptation of Inference-Time Reasoning Strategies",
       "url": "/research/2511.11519v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Enabling agentic AI systems to adapt their problem-solving approaches based on post-training interactions remains a fundamental challenge. While systems that update and maintain a memory at inference time have been proposed, existing designs only steer the system by modifying textual input to a language model or agent, which means that they cannot change sampling parameters, remove tools, modify system prompts, or switch between agentic and workflow paradigms. On the other hand, systems that adapt more flexibly require offline optimization and remain static once deployed. We present Experience-Guided Reasoner (EGuR), which generates tailored strategies – complete computational procedures involving LLM calls, tools, sampling parameters, and control logic – dynamically at inference time based on accumulated experience. We achieve this using an LLM-based meta-strategy – a strategy that outputs strategies – enabling adaptation of all strategy components (prompts, sampling parameters, tool configurations, and control logic). EGuR operates through two components: a Guide generates multiple candidate strategies conditioned on the current problem and structured memory of past experiences, while a Consolidator integrates execution feedback to improve future strategy generation. This produces complete, ready-to-run strategies optimized for each problem, which can be cached, retrieved, and executed as needed without wasting resources. Across five challenging benchmarks (AIME 2025, 3-SAT, and three Big Bench Extra Hard tasks), EGuR achieves up to 14% accuracy improvements over the strongest baselines while reducing computational costs by up to 111x, with both metrics improving as the system gains experience."
     }
     ,
   
     {
       "title": "Volumetric Ergodic Control",
       "url": "/research/2511.11533v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Ergodic control synthesizes optimal coverage behaviors over spatial distributions for nonlinear systems. However, existing formulations model the robot as a non-volumetric point, but in practice a robot interacts with the environment through its body and sensors with physical volume. In this work, we introduce a new ergodic control formulation that optimizes spatial coverage using a volumetric state representation. Our method preserves the asymptotic coverage guarantees of ergodic control, adds minimal computational overhead for real-time control, and supports arbitrary sample-based volumetric models. We evaluate our method across search and manipulation tasks – with multiple robot dynamics and end-effector geometries or sensor models – and show that it improves coverage efficiency by more than a factor of two while maintaining a 100% task completion rate across all experiments, outperforming the standard ergodic control method. Finally, we demonstrate the effectiveness of our method on a robot arm performing mechanical erasing tasks."
     }
     ,
   
     {
       "title": "Aligning Machiavellian Agents: Behavior Steering via Test-Time Policy Shaping",
       "url": "/research/2511.11551v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "The deployment of decision-making AI agents presents a critical challenge in maintaining alignment with human values or guidelines while operating in complex, dynamic environments. Agents trained solely to achieve their objectives may adopt harmful behavior, exposing a key trade-off between maximizing the reward function and maintaining the alignment. For the pre-trained agents, ensuring alignment is particularly challenging, as retraining can be a costly and slow process. This is further complicated by the diverse and potentially conflicting attributes representing the ethical values for alignment. To address these challenges, we propose a test-time alignment technique based on model-guided policy shaping. Our method allows precise control over individual behavioral attributes, generalizes across diverse reinforcement learning (RL) environments, and facilitates a principled trade-off between ethical alignment and reward maximization without requiring agent retraining. We evaluate our approach using the MACHIAVELLI benchmark, which comprises 134 text-based game environments and thousands of annotated scenarios involving ethical decisions. The RL agents are first trained to maximize the reward in their respective games. At test time, we apply policy shaping via scenario-action attribute classifiers to ensure decision alignment with ethical attributes. We compare our approach against prior training-time methods and general-purpose agents, as well as study several types of ethical violations and power-seeking behavior. Our results demonstrate that test-time policy shaping provides an effective and scalable solution for mitigating unethical behavior across diverse environments and alignment attributes."
     }
     ,
   
     {
       "title": "Human-AI collaborative autonomous synthesis with pulsed laser deposition for remote epitaxy",
       "url": "/research/2511.11558v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "Autonomous laboratories typically rely on data-driven decision-making, occasionally with human-in-the-loop oversight to inject domain expertise. Fully leveraging AI agents, however, requires tightly coupled, collaborative workflows spanning hypothesis generation, experimental planning, execution, and interpretation. To address this, we develop and deploy a human-AI collaborative (HAIC) workflow that integrates large language models for hypothesis generation and analysis, with collaborative policy updates driving autonomous pulsed laser deposition (PLD) experiments for remote epitaxy of BaTiO$_3$/graphene. HAIC accelerated the hypothesis formation and experimental design and efficiently mapped the growth space to graphene-damage. In situ Raman spectroscopy reveals that chemistry drives degradation while the highest energy plume components seed defects, identifying a low-O$_2$ pressure low-temperature synthesis window that preserves graphene but is incompatible with optimal BaTiO$_3$ growth. Thus, we show a two-step Ar/O$_2$ deposition is required to exfoliate ferroelectric BaTiO$_3$ while maintaining a monolayer graphene interlayer. HAIC stages human insight with AI reasoning between autonomous batches to drive rapid scientific progress, providing an evolution to many existing human-in-the-loop autonomous workflows."
     }
     ,
   
     {
       "title": "A Unified Convergence Analysis for Semi-Decentralized Learning: Sampled-to-Sampled vs. Sampled-to-All Communication",
       "url": "/research/2511.11560v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "In semi-decentralized federated learning, devices primarily rely on device-to-device communication but occasionally interact with a central server. Periodically, a sampled subset of devices uploads their local models to the server, which computes an aggregate model. The server can then either (i) share this aggregate model only with the sampled clients (sampled-to-sampled, S2S) or (ii) broadcast it to all clients (sampled-to-all, S2A). Despite their practical significance, a rigorous theoretical and empirical comparison of these two strategies remains absent. We address this gap by analyzing S2S and S2A within a unified convergence framework that accounts for key system parameters: sampling rate, server aggregation frequency, and network connectivity. Our results, both analytical and experimental, reveal distinct regimes where one strategy outperforms the other, depending primarily on the degree of data heterogeneity across devices. These insights lead to concrete design guidelines for practical semi-decentralized FL deployments."
     }
     ,
   
     {
       "title": "Private Frequency Estimation Via Residue Number Systems",
       "url": "/research/2511.11569v1.html",
-      "date": "November 17, 2025",
+      "date": "November 18, 2025",
       "tags": "",
-      "content": ""
+      "content": "We present \\textsf{ModularSubsetSelection} (MSS), a new algorithm for locally differentially private (LDP) frequency estimation. Given a universe of size $k$ and $n$ users, our $\\varepsilon$-LDP mechanism encodes each input via a Residue Number System (RNS) over $\\ell$ pairwise-coprime moduli $m_0, \\ldots, m_{\\ell-1}$, and reports a randomly chosen index $j \\in [\\ell]$ along with the perturbed residue using the statistically optimal \\textsf{SubsetSelection}~(SS) (Wang et al. 2016). This design reduces the user communication cost from $Θ\\bigl(ω\\log_2(k/ω)\\bigr)$ bits required by standard SS (with $ω\\approx k/(e^\\varepsilon+1)$) down to $\\lceil \\log_2 \\ell \\rceil + \\lceil \\log_2 m_j \\rceil$ bits, where $m_j &lt; k$. Server-side decoding runs in $Θ(n + r k \\ell)$ time, where $r$ is the number of LSMR (Fong and Saunders 2011) iterations. In practice, with well-conditioned moduli (\\textit{i.e.}, constant $r$ and $\\ell = Θ(\\log k)$), this becomes $Θ(n + k \\log k)$. We prove that MSS achieves worst-case MSE within a constant factor of state-of-the-art protocols such as SS and \\textsf{ProjectiveGeometryResponse} (PGR) (Feldman et al. 2022), while avoiding the algebraic prerequisites and dynamic-programming decoder required by PGR. Empirically, MSS matches the estimation accuracy of SS, PGR, and \\textsf{RAPPOR} (Erlingsson, Pihur, and Korolova 2014) across realistic $(k, \\varepsilon)$ settings, while offering faster decoding than PGR and shorter user messages than SS. Lastly, by sampling from multiple moduli and reporting only a single perturbed residue, MSS achieves the lowest reconstruction-attack success rate among all evaluated LDP protocols."
+    }
+    ,
+  
+    {
+      "title": "A Sample Research Paper",
+      "url": "/research/sample_paper.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "This is the full content of the sample research paper."
+    }
+    ,
+  
+    {
+      "title": "Odin the All-Father: King of Asgard",
+      "url": "/mythology/01-odin-the-allfather.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "Odin the All-Father: King of AsgardOdin, the preeminent figure in Norse mythology, is a deity of immense complexity and power. Known as the All-Father, he is the king of the Æsir gods who reside in the celestial realm of Asgard. His influence permeates every aspect of the Norse cosmos, from war and wisdom to poetry and death. Odin is not a benevolent, passive ruler; he is a restless seeker of knowledge, an orchestrator of conflict, and a master of magic, often wandering the realms in disguise to observe and influence the affairs of gods and mortals alike.His parentage traces back to Borr and the jötunn (giantess) Bestla, and he has two brothers, Vili and Vé. Together, they slew the primordial giant Ymir and fashioned the world from his body: his flesh became the earth, his blood the oceans, his bones the mountains, and his skull the sky. As the ruler of Asgard, Odin presides over Valhalla, the magnificent hall where half of the warriors who die bravely in battle are brought by the Valkyries. There, these chosen champions, the Einherjar, feast and train, awaiting the final battle of Ragnarök, where they will fight alongside Odin.Odin’s appearance is iconic. He is often depicted as a tall, old man with a long, grey beard, wearing a cloak and a broad-brimmed hat to conceal his identity during his travels. Most famously, he has only one eye. The other was sacrificed at Mímir’s Well, a source of cosmic wisdom located at the roots of the world tree, Yggdrasil. In exchange for his eye, Odin was granted a drink from the well, giving him unparalleled knowledge and insight into the past, present, and future. This act perfectly encapsulates his character: a willingness to endure great personal cost for the sake of wisdom.His thirst for knowledge is insatiable. In another famous tale, he hanged himself from Yggdrasil for nine days and nine nights, pierced by his own spear, Gungnir, as a sacrifice to himself. This ordeal allowed him to grasp the secrets of the runes, the ancient magical script that holds profound power over the fabric of reality. He passed this knowledge on to humanity, further cementing his role as a god of wisdom and esoteric arts.Odin is accompanied by several animal companions who aid him in his rule and his quest for information. His two ravens, Huginn (Thought) and Muninn (Memory), fly across the nine realms each day and return to whisper all they have seen and heard into his ear. He also has two wolves, Geri and Freki (both meaning “the ravenous” or “greedy one”), who sit at his feet in Valhalla. He rides the eight-legged steed, Sleipnir, the fastest horse in all creation, which can gallop through the sky and across the sea. Odin’s relentless pursuit of knowledge, his command over the battlefield, and his somber understanding of his own eventual demise at Ragnarök make him one of the most compelling and enduring figures in world mythology."
+    }
+    ,
+  
+    {
+      "title": "Thor: The Mighty God of Thunder",
+      "url": "/mythology/02-thor-god-of-thunder.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "Thor: The Mighty God of ThunderThor, one of the most prominent and revered figures in Norse mythology, is the god of thunder, lightning, storms, oak trees, strength, and the protection of mankind. As the son of Odin, the All-Father, and Jörð, the personification of the Earth, Thor is the strongest of all the Æsir gods and serves as the primary champion of Asgard. His tales are filled with heroic deeds, colossal battles, and an unwavering commitment to defending the realms of gods and mortals from the destructive forces of chaos, primarily the jötnar (giants).Unlike his father, Odin, who often relies on cunning, magic, and intellectual pursuits, Thor is a god of action. He is known for his straightforward, courageous, and sometimes hot-headed nature. He possesses a formidable physical presence, typically depicted with a powerful build and a fiery red beard that crackles with lightning. He travels across the sky in a chariot pulled by two giant goats, Tanngrisnir (Teeth-barer) and Tanngnjóstr (Teeth-grinder), and the rumbling of his chariot wheels is said to be the source of thunder.Thor’s power is amplified by three magical artifacts. The most famous is his hammer, Mjölnir, a fearsome weapon forged by the dwarven brothers Sindri and Brokkr. Mjölnir is capable of leveling mountains with a single blow and, when thrown, it always returns to Thor’s hand. To wield the hammer, Thor requires a pair of iron gauntlets, Járngreipr, which allow him to handle its immense power. He also wears a belt of strength, Megingjörð, which is said to double his already incredible might. Together, these items make him nearly invincible in battle.Thor’s primary antagonists are the giants of Jötunheimr, who represent the forces of chaos and nature that constantly threaten the order of the cosmos. His sagas are replete with accounts of his journeys into their land to thwart their schemes. One of the most famous stories involves a visit to the castle of the giant king Útgarða-Loki, where Thor and his companions are subjected to a series of deceptive tests. Thor is challenged to lift a giant cat, which is actually the Midgard Serpent, Jörmungandr, in disguise; he is challenged to a drinking contest from a horn that is connected to the sea; and he is asked to wrestle an old woman who is the personification of old age. Though he technically “fails” these tasks, his efforts are so immense—lifting the serpent enough to make it let go of its own tail, drinking a significant portion of the ocean, and holding his own against old age—that he terrifies Útgarða-Loki and proves his unmatched power.He is the husband of the golden-haired goddess Sif, and together they have a daughter named Þrúðr. He also has two sons, Móði (Courage) and Magni (Might), with the giantess Járnsaxa. His family life, though not as central to his myths as his battles, highlights his role as a protector and a figure of stability. Thor’s hall in Asgard is named Bilskírnir, the largest of all the buildings in the celestial realm, with 540 rooms. It is a fitting home for the great defender of both gods and humanity. At Ragnarök, the prophesied end of the world, Thor is destined to finally kill his arch-nemesis, the Midgard Serpent, but he will succumb to the serpent’s venom and die shortly after, a testament to his eternal, self-sacrificing role as a guardian of the realms."
+    }
+    ,
+  
+    {
+      "title": "Loki: The Cunning Trickster God",
+      "url": "/mythology/03-loki-the-trickster.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "Loki: The Cunning Trickster GodLoki is one of the most complex and controversial figures in Norse mythology. He is the god of mischief, trickery, and chaos, a being whose cleverness and cunning are as formidable as Thor’s strength or Odin’s wisdom. Unlike the other gods of Asgard, Loki is not one of the Æsir by birth. He is the son of the jötunn (giant) Fárbauti and the goddess Laufey, making him a giant who was accepted among the Æsir, a blood-brother to Odin himself. This dual heritage places him in a unique and often precarious position, existing on the fringes of the divine community, sometimes as its greatest asset and other times as its most dangerous adversary.Loki is a master shapeshifter, capable of changing his form and even his gender at will. He has appeared as a salmon, a mare, a fly, and an old woman, using these disguises to further his schemes, escape consequences, or aid the other gods when it suits him. His intelligence is unmatched, but his loyalty is always in question. His actions are driven by a mixture of malice, a desire for amusement, and an insatiable need to disrupt the established order. He is the catalyst for many of the most famous myths, often creating a crisis that the other gods must then resolve—a crisis that he himself sometimes helps to fix, though usually for a price.One of Loki’s most famous exploits involves the creation of Thor’s hammer, Mjölnir. In a fit of mischief, Loki cut off the beautiful golden hair of Thor’s wife, Sif. Enraged, Thor threatened to break every bone in Loki’s body unless he found a way to replace it. To save himself, Loki traveled to the realm of the dwarves, the master craftsmen of the cosmos. He not only commissioned a new head of magical golden hair but also, through a series of clever wagers and deceptions, goaded the dwarves into creating several other treasures for the gods, including Odin’s spear Gungnir, the golden boar Gullinbursti, and, of course, Mjölnir itself. Though the hammer’s handle was accidentally made short due to Loki’s interference (disguised as a fly, he bit the dwarf Brokkr at a crucial moment), the treasures he brought back were so magnificent that they saved him from Thor’s wrath.However, Loki’s actions grow progressively darker over time. His most heinous act is his role in the death of Baldr, the gentle and beloved son of Odin and Frigg. Baldr was immune to all harm after his mother, Frigg, extracted an oath from every object in creation not to hurt him. However, she overlooked the seemingly harmless mistletoe. Loki, driven by jealousy, fashioned a spear from mistletoe and tricked the blind god Höðr into throwing it at Baldr, killing him instantly. This act was the ultimate betrayal, a point of no return for Loki. It shattered the peace of Asgard and set in motion the events that would lead to Ragnarök.For his crime, the gods captured Loki and punished him severely. He was bound in a cave with the entrails of his own son, with a venomous serpent placed above him, dripping poison onto his face for all eternity. His loyal wife, Sigyn, stays by his side, catching the venom in a bowl, but when she turns to empty it, the poison strikes Loki, causing him to writhe in agony and create earthquakes. It is prophesied that he will break free from his bonds at the dawn of Ragnarök to lead the forces of chaos—the giants, monsters, and the dead—in the final battle against the gods of Asgard, where he and his old rival, Heimdall, will slay each other."
+    }
+    ,
+  
+    {
+      "title": "The Vikings: Raiders, Traders, and Explorers",
+      "url": "/mythology/04-the-vikings.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "The Vikings: Raiders, Traders, and ExplorersThe term “Viking” conjures images of fierce, horn-helmeted warriors descending from their longships to raid unsuspecting coastal villages. While this picture is not entirely false, it is a dramatic simplification of a complex and influential period in history. The Viking Age, spanning roughly from the late 8th to the late 11th centuries, was a time of profound change in Europe, driven by the Scandinavian peoples known as the Norsemen. These were not just pirates and raiders; they were also sophisticated traders, expert shipbuilders, intrepid explorers, and skilled artisans who left an indelible mark on the world.The Viking Age is traditionally said to have begun in 793 AD with the raid on the monastery at Lindisfarne, off the coast of northeastern England. This shocking and brutal attack on a holy site sent a wave of terror through Christian Europe and heralded the arrival of a new and formidable force. For the next three centuries, Norsemen would venture far from their homelands in Scandinavia (modern-day Denmark, Norway, and Sweden). Their motivations were complex and varied, including a search for wealth, a desire for glory, political pressure, a shortage of viable farmland, and a thirst for adventure.The key to their success was the longship. This masterpiece of naval engineering was a clinker-built vessel, long, narrow, and shallow, designed for speed and flexibility. Its shallow draft allowed it to navigate not only the open ocean but also far inland via rivers, enabling surprise attacks on settlements that had previously been considered safe. The symmetrical design meant it could reverse direction without turning around, a crucial advantage for quick getaways. These ships carried the Vikings across the North Sea to Britain and the coasts of France, down rivers into the heart of Russia, and across the Atlantic to Iceland, Greenland, and even North America—five centuries before Christopher Columbus.While their raids were devastating, the Vikings were just as often traders. They established extensive trade networks that stretched from Constantinople in the east to Newfoundland in the west. They dealt in a wide variety of goods, including furs, amber, walrus ivory, timber, and, most grimly, slaves. In exchange, they acquired silver, silks, spices, wine, and weapons. Cities like Dublin in Ireland, York (Jorvik) in England, and Kiev in modern-day Ukraine were founded or significantly developed by the Vikings as major centers of trade and settlement.Norse society was surprisingly organized and complex. It was a hierarchical society led by chieftains or kings, who were expected to be generous leaders and successful warriors. Law and order were maintained through a system of local and regional assemblies known as “things,” where free men would gather to settle disputes, pass laws, and make political decisions. Their artistic culture was rich and intricate, characterized by the elaborate patterns of animal and knotwork designs found on everything from jewelry and weapons to rune stones and wood carvings. Their pagan religion, with its pantheon of gods like Odin and Thor, provided a framework for understanding the world, and their mythology was filled with epic tales of heroes, monsters, and the eventual end of the world, Ragnarök. Though the Viking Age eventually waned as the Norse kingdoms consolidated and adopted Christianity, their legacy endures in the language, laws, and genetic makeup of the lands they once explored and conquered."
+    }
+    ,
+  
+    {
+      "title": "Valhalla and the Valkyries: The Hall of the Slain",
+      "url": "/mythology/05-valhalla-and-valkyries.html",
+      "date": "November 18, 2025",
+      "tags": "",
+      "content": "Valhalla and the Valkyries: The Hall of the SlainIn the grand cosmology of the Norse people, the concept of the afterlife was not a simple matter of heaven or hell. For the Viking warrior, the most glorious and sought-after fate was to die bravely in battle and be chosen to enter Valhalla, the majestic Hall of the Slain. Presided over by Odin, the All-Father, Valhalla was a warrior’s paradise, a place of feasting, fighting, and preparing for the ultimate conflict at the end of the world. This celestial hall and the divine beings who selected its inhabitants, the Valkyries, form one of the most iconic and powerful elements of Norse mythology.Valhalla (Valhöll in Old Norse, meaning “Hall of the Slain”) is located in Asgard, the realm of the gods. It is a vast and magnificent hall, so large that its rafters are made of shining spears, its roof is tiled with golden shields, and its benches are strewn with coats of mail. It is said to have 540 massive doors, each wide enough for 800 warriors to march through side-by-side. This immense size is necessary to accommodate the endless stream of chosen champions, known as the Einherjar, who are destined to fill its halls.The life of an Einherjar in Valhalla is one of eternal, joyous combat. Every day, they don their armor, take up their weapons, and engage in ferocious battles in the great courtyard of Asgard. They fight with all their might, suffering grievous wounds and even death, only to be miraculously healed and resurrected by evening. They then gather together in the great hall to feast. Their meal is a grand affair, where they are served the meat of the cosmic boar, Sæhrímnir, who is cooked and eaten each night only to be whole again the next day. They drink their fill of heavenly mead that flows from the udders of the goat Heiðrún, who grazes on the leaves of the world tree, Yggdrasil.This endless cycle of fighting and feasting is not without purpose. The Einherjar are not merely enjoying an eternal reward; they are Odin’s hand-picked army, training for the prophesied doom of the gods, Ragnarök. When the final day comes, the great horn Gjallarhorn will sound, and the Einherjar will stream from the gates of Valhalla to fight alongside Odin and the other Æsir gods against the forces of chaos—the giants, the monsters, and the armies of the dead led by Loki. The glory of Valhalla, therefore, is intrinsically linked to the tragic, heroic destiny of the Norse cosmos.The agents of Odin responsible for choosing who dies in battle and who is worthy of a place in Valhalla are the Valkyries. These “choosers of the slain” are female warrior-spirits, depicted as beautiful but fearsome maidens clad in armor, riding winged horses through the sky above battlefields. They are not passive observers; they have the power to influence the outcome of a battle, weaving the fate of warriors on a grim loom. When a warrior falls with honor, a Valkyrie descends to grant them the “Valkyrie’s kiss” and escort their spirit from the battlefield to the gates of Valhalla. This process elevates a mortal death into a moment of divine selection and ultimate glory. Not all who die in battle are chosen, however; only half go to Odin’s hall, while the other half are taken by the goddess Freyja to her own afterlife field, Fólkvangr. The Valkyries, therefore, are both dispensers of fate and the vital link between the mortal realm of combat and the divine realm of eternal honor."
     }
     ,
   
