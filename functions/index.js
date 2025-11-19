@@ -10,6 +10,7 @@ admin.initializeApp();
 const app = express();
 app.use(cors({ origin: true }));
 
+// Use a more secure way to handle API keys, e.g., environment variables
 const geminiApiKey = functions.config().gemini.key;
 const genAI = new GoogleGenerativeAI(geminiApiKey);
 
@@ -20,18 +21,26 @@ app.post('/api/chat', async (req, res) => {
         const userMessage = req.body.contents;
         const pageContext = req.body.context;
 
-        let prompt;
-        if (pageContext) {
-            prompt = `You answer ONLY using the content of this research paper: ${pageContext}\n\nUser Question: ${userMessage}`;
-        } else {
-            prompt = userMessage;
-        }
+        // Create a more robust prompt
+        const prompt = `Based ONLY on the following research paper content, answer the user's question.
+
+        PAPER CONTENT:
+        ---
+        ${pageContext}
+        ---
+        
+        USER QUESTION: ${userMessage}`;
 
         const result = await model.generateContent(prompt);
-        res.json(result.response);
+        const response = await result.response;
+        const text = response.text();
+        
+        // Send the response back in a simple JSON format
+        res.json({ text });
+
     } catch (error) {
         console.error('Error in Gemini API call:', error);
-        res.status(500).send('Error generating content');
+        res.status(500).send('Error generating content from the model');
     }
 });
 

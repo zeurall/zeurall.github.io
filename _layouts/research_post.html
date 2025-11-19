@@ -9,31 +9,44 @@ layout: default
     }
 
     .paper-column {
-        flex: 1;
+        flex: 2; /* Default to paper taking more space */
         width: 100%;
         transition: all 0.5s ease-in-out;
     }
 
     .chatbot-column {
-        flex: 0;
-        width: 0;
+        flex: 1; /* Default to chatbot taking less space */
+        width: 100%;
         overflow: hidden;
         transition: all 0.5s ease-in-out;
         border-left: 1px solid #eee;
-        padding-left: 0;
-    }
-
-    .research-container.chat-active .paper-column {
-        flex: 2; /* Paper takes 2/3 of the space */
-    }
-
-    .research-container.chat-active .chatbot-column {
-        flex: 1; /* Chatbot takes 1/3 of the space */
         padding-left: 20px;
+        display: flex;
+        flex-direction: column;
     }
 
     #chatbot-container {
         margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Allow chatbot to grow */
+    }
+
+    #chat-box {
+        border: 1px solid #aaa;
+        border-radius: 8px;
+        padding: 15px;
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    #chat-log {
+        flex-grow: 1;
+        min-height: 300px;
+        overflow-y: auto;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -42,11 +55,12 @@ layout: default
         <h1>{{ page.title }}</h1>
         <p><strong>Authors:</strong> {{ page.authors | join: ", " }}</p>
         <p><strong>PDF:</strong> <a href="{{ page.pdf }}" target="_blank">Download</a></p>
-        <p>{{ page.abstract }}</p>
-
         <hr>
-        <h2>Full Abstract</h2>
-        <div class="paper-body">
+        <h2>Abstract</h2>
+        <p>{{ page.abstract }}</p>
+        <hr>
+        <h2>Full Content</h2>
+        <div class="paper-body" id="paper-content">
             {{ content }}
         </div>
     </div>
@@ -54,25 +68,11 @@ layout: default
     <div class="chatbot-column">
         <h2>Ask anything about this paper</h2>
         <div id="chatbot-container">
-             <div id="api-key-sidebar">
-                <input type="text" id="api-key-input" placeholder="Enter your Gemini API key">
-                <button id="save-api-key">Save</button>
-                <div>
-                    <input type="checkbox" id="use-public-assistant" checked>
-                    <label for="use-public-assistant">Use public assistant (no key needed)</label>
-                </div>
-            </div>
-            <div id="chat-box" style="
-                border: 1px solid #aaa;
-                border-radius: 8px;
-                padding: 15px;
-                background: #fafafa;">
-
-                <div id="chat-log" style="min-height:300px; margin-bottom:10px;"></div>
-
+            <div id="chat-box">
+                <div id="chat-log"></div>
                 <input id="chat-input"
                     type="text"
-                    placeholder="Ask a question about this paper..."
+                    placeholder="Ask a question..."
                     style="width: 100%; padding: 10px; border-radius: 6px;">
             </div>
         </div>
@@ -81,91 +81,49 @@ layout: default
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const researchContainer = document.getElementById('research-container');
     const chatInput = document.getElementById('chat-input');
-    
-    // --- New code to handle split screen ---
-    chatInput.addEventListener('focus', () => {
-        researchContainer.classList.add('chat-active');
-    });
-
-    // --- Existing chatbot logic ---
-    const apiKeyInput = document.getElementById('api-key-input');
-    const saveButton = document.getElementById('save-api-key');
-    const publicToggle = document.getElementById('use-public-assistant');
     const chatLog = document.getElementById('chat-log');
     
-    let userApiKey = localStorage.getItem('gemini_api_key');
-    if (userApiKey) {
-      apiKeyInput.value = userApiKey;
-    }
-
-    saveButton.addEventListener('click', () => {
-        userApiKey = apiKeyInput.value.trim();
-        if (userApiKey) {
-            localStorage.setItem('gemini_api_key', userApiKey);
-            alert('API key saved!');
-        }
-    });
+    // Use the full content of the paper as context for the chatbot
+    const paperContentForBot = document.getElementById('paper-content').innerText;
 
     chatInput.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
-            const question = chatInput.value.trim();
-            if (!question) return;
+            const userMessage = chatInput.value.trim();
+            if (!userMessage) return;
 
-            chatLog.innerHTML += `<p><strong>You:</strong> ${question}</p>`;
+            // Display user's message immediately
+            chatLog.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
             chatInput.value = '';
+            chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
 
-            const paperContext = `You answer ONLY using the content of this research paper: {{ page.abstract | escape }} {{ content | escape }}`;
+            try {
+                // Send the user's message and the paper's content to the backend
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: userMessage,
+                        context: paperContentForBot
+                    })
+                });
 
-            if (publicToggle.checked) {
-                // Use the public assistant (backend proxy)
-                try {
-                    const response = await fetch('/api/chat', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{
-                                parts: [{ text: `${paperContext}\n\n${question}` }]
-                            }]
-                        })
-                    });
-                    const data = await response.json();
-                    const answer = data.candidates[0].content.parts[0].text || 'Error from public assistant.';
-                    chatLog.innerHTML += `<p><strong>Bot:</strong> ${answer}</p>`;
-                } catch (error) {
-                    console.error('Error with public assistant:', error);
-                    chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, something went wrong with the public assistant.</p>`;
-                }
-            } else {
-                // Use the user's own API key
-                if (!userApiKey) {
-                    chatLog.innerHTML += `<p><strong>Bot:</strong> Please enter your Gemini API key to ask a question.</p>`;
-                    return;
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText || 'Network response was not ok');
                 }
 
-                try {
-                    const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${userApiKey}`;
-                    const response = await fetch(GEMINI_API_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{
-                                parts: [{ text: `${paperContext}\n\n${question}` }]
-                            }]
-                        })
-                    });
-                    const data = await response.json();
-                    if (data.candidates && data.candidates.length > 0) {
-                        const answer = data.candidates[0].content.parts[0].text;
-                        chatLog.innerHTML += `<p><strong>Bot:</strong> ${answer}</p>`;
-                    } else {
-                         chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I couldn\'t get a response. Check your API key and network connection.</p>`;
-                    }
-                } catch (error) {
-                    console.error('Error with user API key:', error);
-                    chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, something went wrong. Please check your API key and network connection.</p>`;
-                }
+                const data = await response.json();
+                const botAnswer = data.text || 'No response from the assistant.';
+                
+                // Display the bot's answer
+                chatLog.innerHTML += `<p><strong>Bot:</strong> ${botAnswer}</p>`;
+
+            } catch (error) {
+                console.error('Error with the chatbot:', error);
+                chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I encountered an error. Please try again. (${error.message})</p>`;
+            } finally {
+                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
             }
         }
     });
