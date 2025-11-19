@@ -1,7 +1,3 @@
-<!-- TEST: VISIBILITY MARKER -->
-<div style="height:100px; background:red; padding: 20px; text-align:center; color:white; font-size:24px;">
-  If you can see this red box, the layout file is being updated correctly.
-</div>
 
 ---
 layout: default
@@ -88,47 +84,68 @@ layout: default
 document.addEventListener('DOMContentLoaded', () => {
     const chatInput = document.getElementById('chat-input');
     const chatLog = document.getElementById('chat-log');
-    
-    // Use the full content of the paper as context for the chatbot
     const paperContentForBot = document.getElementById('paper-content').innerText;
+
+    const PROXY_URL = 'https://twilight-hill-c83f.ladyexquisito.workers.dev';
 
     chatInput.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
             const userMessage = chatInput.value.trim();
             if (!userMessage) return;
 
-            // Display user's message immediately
+            // Display user's message
             chatLog.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
             chatInput.value = '';
-            chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            // Show a loading message
+            chatLog.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            const prompt = `Based ONLY on the following research paper content, answer the user's question.\n\nPAPER CONTENT:\n---\n${paperContentForBot}\n---\n\nUSER QUESTION: ${userMessage}`;
 
             try {
-                // Send the user's message and the paper's content to the backend
-                const response = await fetch('/api/chat', {
+                const response = await fetch(PROXY_URL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
                     body: JSON.stringify({
-                        contents: userMessage,
-                        context: paperContentForBot
+                        contents: [{
+                            parts: [{
+                                text: prompt
+                            }]
+                        }]
                     })
                 });
 
                 if (!response.ok) {
-                    const errorText = await response.text();
-                    throw new Error(errorText || 'Network response was not ok');
+                    const errorBody = await response.text();
+                    console.error('API Error Response:', errorBody);
+                    throw new Error(`Network response was not ok. Status: ${response.status}`);
                 }
 
                 const data = await response.json();
-                const botAnswer = data.text || 'No response from the assistant.';
-                
-                // Display the bot's answer
-                chatLog.innerHTML += `<p><strong>Bot:</strong> ${botAnswer}</p>`;
+
+                const thinkingMessage = chatLog.querySelector('p:last-child');
+                thinkingMessage.remove();
+
+                if (data.candidates && data.candidates.length > 0) {
+                    const botAnswer = data.candidates[0].content.parts[0].text;
+                    chatLog.innerHTML += `<p><strong>Bot:</strong> ${botAnswer}</p>`;
+                } else {
+                     chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I couldn't get a response.</p>`;
+                }
 
             } catch (error) {
+                const thinkingMessage = chatLog.querySelector('p:last-child');
+                if (thinkingMessage && thinkingMessage.innerText.includes("Thinking...")) {
+                    thinkingMessage.remove();
+                }
                 console.error('Error with the chatbot:', error);
-                chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I encountered an error. Please try again. (${error.message})</p>`;
+                chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, an error occurred: ${error.message}</p>`;
             } finally {
-                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
+                chatLog.scrollTop = chatLog.scrollHeight;
             }
         }
     });
