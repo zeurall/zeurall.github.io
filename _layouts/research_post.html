@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatLog = document.getElementById('chat-log');
     const paperContentForBot = document.getElementById('paper-content').innerText;
 
-    const PROXY_URL = 'https://twilight-hill-c83f.ladyexquisito.workers.dev';
+    const PROXY_URL = 'https://zeural.netlify.app/.netlify/functions/chat';
 
     chatInput.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
@@ -102,8 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
             chatLog.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
             chatLog.scrollTop = chatLog.scrollHeight;
 
-            const prompt = `Based ONLY on the following research paper content, answer the user's question.\n\nPAPER CONTENT:\n---\n${paperContentForBot}\n---\n\nUSER QUESTION: ${userMessage}`;
-
             try {
                 const response = await fetch(PROXY_URL, {
                     method: 'POST',
@@ -111,11 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        contents: [{
-                            parts: [{
-                                text: prompt
-                            }]
-                        }]
+                        context: paperContentForBot,
+                        contents: userMessage
                     })
                 });
 
@@ -130,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const thinkingMessage = chatLog.querySelector('p:last-child');
                 thinkingMessage.remove();
 
-                if (data.candidates && data.candidates.length > 0) {
-                    const botAnswer = data.candidates[0].content.parts[0].text;
+                if (data.text) {
+                    const botAnswer = data.text;
                     chatLog.innerHTML += `<p><strong>Bot:</strong> ${botAnswer}</p>`;
                 } else {
                      chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, I couldn't get a response.</p>`;
