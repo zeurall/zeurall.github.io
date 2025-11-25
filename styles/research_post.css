@@ -1,12 +1,12 @@
 /*
   styles/research_post.css
-  Dedicated stylesheet for the interactive research post layout.
+  v2 - Refactored for a contained, widget-like chatbot UI.
 */
 
 /* --- 1. Base Layout & Reading Experience --- */
 .research-container {
     padding: 2rem 3rem;
-    max-width: 900px; /* Comfortable reading width */
+    max-width: 900px;
     margin: 0 auto;
     transition: all 0.5s ease-in-out;
 }
@@ -16,23 +16,36 @@
     transition: all 0.5s ease-in-out;
 }
 
-/* --- 2. Initial, Collapsed Chatbot State --- */
+/* --- 2. Initial, WIDGET-LIKE Chatbot State (Your UI/UX Feedback) --- */
 .chatbot-column {
-    position: fixed; /* Stick to the bottom */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: #f9f9f9;
-    border-top: 1px solid #ddd;
-    padding: 1rem 2rem;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
-    transition: all 0.5s ease-in-out;
-    transform: translateY(100%); /* Initially hidden */
-    z-index: 999; /* Below the main navbar */
+    /* Contained Appearance */
+    position: sticky; /* Stays within the research-container */
+    bottom: 2rem;
+    max-width: 700px;
+    margin: 2rem auto 0 auto; /* Margin top to separate from content */
+    z-index: 1000;
+
+    /* Interactive Look & Feel */
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures child elements respect border-radius */
+    
+    /* Animation & Hover */
+    transform: translateY(150%); /* Initially hidden well below */
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.3s ease,
+                max-width 0.5s ease-in-out,
+                margin 0.5s ease-in-out;
 }
 
 .chatbot-column.loaded {
-    transform: translateY(0);
+    transform: translateY(0); /* Animate into view */
+}
+
+.chatbot-column:not(.chatbot-active):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .chatbot-column h2 {
@@ -41,14 +54,14 @@
 }
 
 #chat-box {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: none; /* No inner border needed, shadow is on the parent */
+    border-radius: 12px;
     background: #fff;
     overflow: hidden;
 }
 
 #chat-log {
-    display: none;
+    display: none; /* Hidden in initial state */
     max-height: 50vh;
     overflow-y: auto;
     padding: 15px;
@@ -57,11 +70,12 @@
 
 #chat-input {
     border: none;
-    padding: 15px;
+    padding: 16px;
     outline: none;
     width: 100%;
     box-sizing: border-box;
     font-size: 1rem;
+    background: transparent;
     transition: background-color 0.2s ease;
 }
 
@@ -70,36 +84,40 @@
     cursor: not-allowed;
 }
 
-
-/* --- 3. DYNAMIC 'ACTIVE' STATE (LAYOUT FIX INCORPORATED) --- */
+/* --- 3. DYNAMIC 'ACTIVE' STATE (Two-Column Layout) --- */
 .research-container.chatbot-active {
     max-width: 100%;
     display: flex;
-    height: 100vh; /* Full viewport height */
-    padding: 70px 0 0 0; /* Add top padding for navbar */
+    height: 100vh;
+    padding: 70px 0 0 0;
     margin: 0;
-    box-sizing: border-box; /* Include padding in height calculation */
-    overflow: hidden; /* Prevent body scroll */
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .chatbot-active .paper-column {
     flex: 3;
-    overflow-y: auto; /* This column scrolls independently */
+    overflow-y: auto;
     padding: 2rem 3rem;
     height: 100%;
 }
 
 .chatbot-active .chatbot-column {
+    /* Override widget styles for the full-screen view */
     position: static;
-    transform: translateY(0);
+    transform: none !important; /* Important to override hover transforms */
     flex: 2;
+    max-width: none;
+    margin: 0;
+    border-radius: 0;
     border-top: none;
     border-left: 1px solid #e0e0e0;
     height: 100%;
     box-shadow: none;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem 2rem; /* Restore padding */
+    padding: 1.5rem 2rem;
+    background: #f9f9f9;
 }
 
 .chatbot-active .chatbot-column h2 {
@@ -111,47 +129,50 @@
     flex-direction: column;
     flex-grow: 1;
     min-height: 0;
+    border: 1px solid #ccc; /* Re-add border in active state */
+    border-radius: 8px;
 }
 
 .chatbot-active #chat-log {
     display: block;
     flex-grow: 1;
-    overflow-y: auto; /* This log scrolls independently */
+    overflow-y: auto;
 }
 
 .chatbot-active #chat-input {
     flex-shrink: 0;
     border-top: 1px solid #ccc;
+    background: #fff;
     border-radius: 0 0 7px 7px;
 }
 
 /* --- 4. Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .research-container {
-        padding: 1.5rem;
+        padding: 1.5rem 1rem;
     }
     
     .chatbot-column {
-        padding: 1rem;
+        bottom: 1rem;
     }
     
     .research-container.chatbot-active {
         display: block;
         height: auto;
-        padding: 0; /* Reset for mobile */
+        padding: 0;
     }
 
     .chatbot-active .paper-column {
         height: auto;
         overflow-y: visible;
-        padding: 0;
+        padding: 1.5rem 1rem;
     }
     
     .chatbot-active .chatbot-column {
-        position: static;
         margin-top: 2rem;
         height: 90vh;
         border-left: none;
         border-top: 2px solid #e0e0e0;
+        padding: 1rem;
     }
 }
