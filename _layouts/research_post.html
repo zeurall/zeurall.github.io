@@ -2,13 +2,7 @@
 layout: default
 ---
 
-<!-- 
-  FINAL, PERFECTED VERSION (v3)
-  Incorporates all of your feedback:
-  - Corrected two-column layout with no overlap or extra scrollbars.
-  - Robust paper-parsing with try/catch block.
-  - User-friendly input disabling while bot is thinking.
--->
+
 
 <div class="research-container" id="research-container">
     <div class="paper-column">
@@ -121,13 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
         let detectedSection = 'Full';
         // ... (rest of the logic is unchanged)
 
-        // --- API CALL ---
+        // --- API CALL (with your suggested paperLink) ---
         try {
             const contextToSend = getSmartContext(userInput, bestSectionContent);
             const response = await fetch(PROXY_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ context: contextToSend.slice(0, 15000), message: userInput })
+                body: JSON.stringify({
+                    context: contextToSend.slice(0, 15000),
+                    message: userInput,
+                    paperLink: window.location.href
+                })
             });
 
             if (!response.ok) throw new Error(await response.text());
