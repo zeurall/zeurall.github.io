@@ -1,6 +1,6 @@
 /*
   styles/research_post.css
-  v2 - Refactored for a contained, widget-like chatbot UI.
+  v3 - Perfected two-column active state based on your detailed feedback.
 */
 
 /* --- 1. Base Layout & Reading Experience --- */
@@ -16,23 +16,18 @@
     transition: all 0.5s ease-in-out;
 }
 
-/* --- 2. Initial, WIDGET-LIKE Chatbot State (Your UI/UX Feedback) --- */
+/* --- 2. Initial, WIDGET-LIKE Chatbot State --- */
 .chatbot-column {
-    /* Contained Appearance */
-    position: sticky; /* Stays within the research-container */
+    position: sticky;
     bottom: 2rem;
     max-width: 700px;
-    margin: 2rem auto 0 auto; /* Margin top to separate from content */
+    margin: 2rem auto 0 auto;
     z-index: 1000;
-
-    /* Interactive Look & Feel */
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    overflow: hidden; /* Ensures child elements respect border-radius */
-    
-    /* Animation & Hover */
-    transform: translateY(150%); /* Initially hidden well below */
+    overflow: hidden;
+    transform: translateY(150%);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
                 box-shadow 0.3s ease,
                 max-width 0.5s ease-in-out,
@@ -40,7 +35,7 @@
 }
 
 .chatbot-column.loaded {
-    transform: translateY(0); /* Animate into view */
+    transform: translateY(0);
 }
 
 .chatbot-column:not(.chatbot-active):hover {
@@ -54,14 +49,14 @@
 }
 
 #chat-box {
-    border: none; /* No inner border needed, shadow is on the parent */
+    border: none;
     border-radius: 12px;
     background: #fff;
     overflow: hidden;
 }
 
 #chat-log {
-    display: none; /* Hidden in initial state */
+    display: none;
     max-height: 50vh;
     overflow-y: auto;
     padding: 15px;
@@ -84,66 +79,72 @@
     cursor: not-allowed;
 }
 
-/* --- 3. DYNAMIC 'ACTIVE' STATE (Two-Column Layout) --- */
+/* --- 3. PERFECTED 'ACTIVE' STATE (Your Detailed UI/UX Fixes) --- */
 .research-container.chatbot-active {
     max-width: 100%;
     display: flex;
-    height: 100vh;
-    padding: 70px 0 0 0;
-    margin: 0;
+    /* 
+      KEY FIX: Calculate height based on viewport minus the navbar height. 
+      Assuming a navbar height of approx. 70px. 
+    */
+    height: calc(100vh - 70px);
+    padding: 0;
+    margin: 70px 0 0 0; /* Align container below the navbar */
     box-sizing: border-box;
     overflow: hidden;
 }
 
 .chatbot-active .paper-column {
     flex: 3;
-    overflow-y: auto;
+    overflow-y: auto; /* Independent scrolling */
     padding: 2rem 3rem;
-    height: 100%;
+    height: 100%; /* Column fills the calculated height */
 }
 
 .chatbot-active .chatbot-column {
-    /* Override widget styles for the full-screen view */
     position: static;
-    transform: none !important; /* Important to override hover transforms */
+    transform: none !important;
     flex: 2;
     max-width: none;
     margin: 0;
     border-radius: 0;
-    border-top: none;
     border-left: 1px solid #e0e0e0;
-    height: 100%;
+    height: 100%; /* Column fills the calculated height */
     box-shadow: none;
+    background: #f9f9f9;
     display: flex;
     flex-direction: column;
     padding: 1.5rem 2rem;
-    background: #f9f9f9;
 }
 
 .chatbot-active .chatbot-column h2 {
     display: block;
+    flex-shrink: 0; /* Prevent title from shrinking */
 }
 
 .chatbot-active #chat-box {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    min-height: 0;
-    border: 1px solid #ccc; /* Re-add border in active state */
+    flex-grow: 1; /* Take up all available space */
+    min-height: 0; /* Allow shrinking within the flex container */
+    border: 1px solid #ddd;
     border-radius: 8px;
+    background: #fff;
 }
 
 .chatbot-active #chat-log {
     display: block;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: auto; /* Independent scrolling for chat history */
+    padding: 15px;
 }
 
 .chatbot-active #chat-input {
-    flex-shrink: 0;
-    border-top: 1px solid #ccc;
+    flex-shrink: 0; /* Prevent input from shrinking */
+    border-top: 1px solid #ddd;
     background: #fff;
     border-radius: 0 0 7px 7px;
+    padding: 12px; /* KEY FIX: Reduced padding for a sleeker input */
 }
 
 /* --- 4. Mobile Responsiveness --- */
@@ -160,6 +161,7 @@
         display: block;
         height: auto;
         padding: 0;
+        margin-top: 70px;
     }
 
     .chatbot-active .paper-column {
@@ -170,7 +172,7 @@
     
     .chatbot-active .chatbot-column {
         margin-top: 2rem;
-        height: 90vh;
+        height: 85vh; /* Adjusted for better mobile experience */
         border-left: none;
         border-top: 2px solid #e0e0e0;
         padding: 1rem;
