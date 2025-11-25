@@ -29,3 +29,8 @@ defaults:
       type: "mythology"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "github"
+    values:
+      layout: "course"
