@@ -3,104 +3,100 @@ layout: default
 ---
 
 <style>
-    /* --- 1. Full-Screen & App-like Layout --- */
-    html, body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden; /* Prevent body scrolling on desktop */
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-    .research-container {
-        display: flex;
-        height: 100vh; /* Full viewport height */
-        width: 100%;
-    }
+/* --- Container --- */
+.research-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
 
-    /* --- 2. Improved Padding & Independent Scrolling --- */
-    .paper-column {
-        flex: 3; /* Give paper slightly more space */
-        overflow-y: auto; /* Enable independent scrolling */
-        padding: 2rem 3rem;
-        height: 100%;
-        box-sizing: border-box;
-    }
+/* --- Paper Column --- */
+.paper-column {
+    flex: 3;
+    overflow-y: auto;
+    padding: 2rem 3rem;
+    height: 100%;
+    box-sizing: border-box;
+}
 
+/* --- Chatbot Column --- */
+.chatbot-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #e0e0e0;
+    height: 100%;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* --- Chat Box --- */
+#chatbot-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    overflow: hidden; /* Chat log scrolls internally */
+}
+
+/* --- Chat Log --- */
+#chat-log {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    line-height: 1.6;
+
+    /* Hide scrollbar but keep scrolling */
+    scrollbar-width: none; /* Firefox */
+}
+#chat-log::-webkit-scrollbar { width: 0; height: 0; } /* Chrome/Safari */
+
+/* --- Chat Input --- */
+#chat-input {
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 15px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    background: #fff;
+    font-size: 1rem;
+}
+
+/* --- Headings --- */
+h1, h2 { font-weight: 600; }
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .research-container { flex-direction: column; height: auto; }
+    .paper-column { height: auto; padding: 1.5rem; overflow-y: visible; }
     .chatbot-column {
-        flex: 2; /* Chatbot takes up less space */
-        display: flex;
-        flex-direction: column;
-        border-left: 1px solid #e0e0e0;
-        height: 100%;
-        padding: 1.5rem 2rem;
-        box-sizing: border-box;
-        background-color: #f9f9f9;
+        height: 90vh;
+        border-left: none;
+        border-top: 2px solid #e0e0e0;
+        margin-top: 2rem;
+        padding: 1rem;
     }
-
-    #chatbot-container {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1; /* Make it fill the column */
-    }
-
-    #chat-box {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background: #fff;
-    }
-
-    #chat-log {
-        flex-grow: 1;
-        overflow-y: auto;
-        padding: 15px;
-        line-height: 1.6;
-    }
-    
-    #chat-input {
-        border: none;
-        border-top: 1px solid #ccc;
-        padding: 15px;
-        border-radius: 0 0 7px 7px; /* Rounded bottom corners */
-        outline: none;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    h1, h2 {
-        font-weight: 600;
-    }
-
-    /* --- 3. Responsive Mobile View --- */
-    @media (max-width: 768px) {
-        html, body {
-            overflow: auto; /* Re-enable scrolling for mobile */
-        }
-        
-        .research-container {
-            flex-direction: column; /* Stack them on top of each other */
-            height: auto; /* Allow content to determine height */
-        }
-
-        .paper-column {
-            height: auto;
-            padding: 1.5rem;
-            overflow-y: visible;
-        }
-
-        .chatbot-column {
-            height: 90vh; /* Give chatbot a fixed viewport height on mobile */
-            border-left: none;
-            border-top: 2px solid #e0e0e0;
-            margin-top: 2rem;
-            padding: 1rem;
-        }
-    }
+}
 </style>
 
-<div class="research-container" id="research-container">
+<div class="research-container">
     <div class="paper-column">
         <h1>{{ page.title }}</h1>
         <p><strong>Authors:</strong> {{ page.authors | join: ", " }}</p>
@@ -112,7 +108,7 @@ layout: default
         </div>
         <hr>
         <div class="paper-body" id="paper-content">
-             {{ content }}
+            {{ content }}
         </div>
     </div>
 
@@ -121,21 +117,20 @@ layout: default
         <div id="chatbot-container">
             <div id="chat-box">
                 <div id="chat-log"></div>
-                <input id="chat-input" type="text" placeholder="e.g., 'What were the results?'">
+                <input id="chat-input" type="text" placeholder="Type your question here...">
             </div>
         </div>
     </div>
 </div>
 
 <script>
-// --- The JavaScript logic remains unchanged, as it is already excellent ---
 document.addEventListener('DOMContentLoaded', () => {
     const chatInput = document.getElementById('chat-input');
     const chatLog = document.getElementById('chat-log');
     const PROXY_URL = 'https://backe-nu.vercel.app/api/chat';
 
+    // --- Preprocess paper sections ---
     const paperSections = {};
-    const fullPaperText = document.getElementById('paper-content').innerText;
     paperSections['Abstract'] = document.getElementById('paper-abstract').innerText;
 
     const headings = [...document.querySelectorAll('.paper-body h2')];
@@ -144,12 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
         let content = '';
         let nextElement = heading.nextElementSibling;
         while(nextElement && nextElement.tagName !== 'H2') {
-            content += nextElement.innerText + '\n';
+            content += nextElement.innerText + '\n\n';
             nextElement = nextElement.nextElementSibling;
         }
         paperSections[sectionName] = content.trim();
     });
-    paperSections['Full'] = fullPaperText.slice(0, 15000);
+    paperSections['Full'] = document.getElementById('paper-content').innerText.slice(0, 15000);
 
     const sectionKeywords = {
         'Abstract': ['abstract', 'overview', 'tldr'],
@@ -157,6 +152,19 @@ document.addEventListener('DOMContentLoaded', () => {
         'Methods': ['method', 'experiment', 'procedure', 'approach', 'technique', 'how'],
         'Results': ['result', 'finding', 'observation', 'data', 'what did they find'],
         'Conclusion': ['conclusion', 'takeaway', 'discussion', 'summarize', 'summary'],
+    };
+
+    // --- Smart paragraph picker ---
+    const getSmartContext = (query, sectionContent) => {
+        const stopWords = new Set(['a','an','the','is','in','on','of','for','to','what','did','they','how','were']);
+        const queryKeywords = query.toLowerCase().split(/\s+/).filter(w => !stopWords.has(w) && w.length>3);
+
+        if (!queryKeywords.length) return sectionContent.slice(0,4000);
+
+        const paragraphs = sectionContent.split(/\n\s*\n/).filter(p => p.trim().length>10);
+        const relevant = paragraphs.filter(p => queryKeywords.some(k => new RegExp(`\\b${k}\\b`, 'i').test(p)));
+
+        return relevant.length ? relevant.join('\n\n') : sectionContent.slice(0,4000);
     };
 
     chatInput.addEventListener('keypress', async (e) => {
@@ -167,55 +175,51 @@ document.addEventListener('DOMContentLoaded', () => {
         chatLog.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
         chatInput.value = '';
         chatLog.scrollTop = chatLog.scrollHeight;
-        
+
         chatLog.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
         setTimeout(() => { chatLog.scrollTop = chatLog.scrollHeight; }, 50);
 
-        let contextToSend = paperSections['Full'];
+        let bestSection = paperSections['Full'];
         let detectedSection = 'Full';
 
         outerLoop: for (const [section, keywords] of Object.entries(sectionKeywords)) {
             for (const kw of keywords) {
                 if (new RegExp(`\\b${kw}\\b`, 'i').test(userInput)) {
-                    const actualSectionTitle = Object.keys(paperSections).find(h2 => new RegExp(section, 'i').test(h2));
-                    if (actualSectionTitle && paperSections[actualSectionTitle]) {
-                        contextToSend = paperSections[actualSectionTitle];
-                        detectedSection = actualSectionTitle;
+                    const actual = Object.keys(paperSections).find(h2 => new RegExp(section, 'i').test(h2));
+                    if (actual && paperSections[actual]) {
+                        bestSection = paperSections[actual];
+                        detectedSection = actual;
                         break outerLoop;
                     }
                 }
             }
         }
 
-        console.log(`User query: "${userInput}" → Detected Section: "${detectedSection}"`);
+        let contextToSend;
+        if (detectedSection==='Full' || detectedSection==='Abstract' || /summary|summarize|overview/i.test(userInput)) {
+            contextToSend = bestSection;
+        } else {
+            contextToSend = getSmartContext(userInput, bestSection);
+        }
 
         try {
-            const response = await fetch(PROXY_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    context: contextToSend.slice(0, 15000),
-                    message: userInput 
-                })
+            const res = await fetch(PROXY_URL,{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body: JSON.stringify({ context: contextToSend.slice(0,15000), message:userInput })
             });
+            if (!res.ok) throw new Error(await res.text());
+            const data = await res.json();
 
-            if (!response.ok) throw new Error(await response.text());
+            const thinkingMsg = chatLog.querySelector('p:last-child');
+            if(thinkingMsg) thinkingMsg.remove();
 
-            const data = await response.json();
-            const thinkingMessage = chatLog.querySelector('p:last-child');
-            if (thinkingMessage) thinkingMessage.remove();
-
-            if (data.response) {
-                chatLog.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
-            } else {
-                throw new Error("Received an empty or invalid response.");
-            }
-
-        } catch (error) {
-            console.error('Chatbot error:', error);
-            const thinkingMessage = chatLog.querySelector('p:last-child');
-            if (thinkingMessage) thinkingMessage.remove();
-            chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, an error occurred. Check the console for details.</p>`;
+            chatLog.innerHTML += `<p><strong>Bot:</strong> ${data.response || "No answer."}</p>`;
+        } catch(err){
+            console.error(err);
+            const thinkingMsg = chatLog.querySelector('p:last-child');
+            if(thinkingMsg) thinkingMsg.remove();
+            chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, an error occurred.</p>`;
         } finally {
             chatLog.scrollTop = chatLog.scrollHeight;
         }
