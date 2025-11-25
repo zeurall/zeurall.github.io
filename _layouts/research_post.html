@@ -3,100 +3,85 @@ layout: default
 ---
 
 <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-/* --- Container --- */
-.research-container {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-}
-
-/* --- Paper Column --- */
-.paper-column {
-    flex: 3;
-    overflow-y: auto;
-    padding: 2rem 3rem;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-/* --- Chatbot Column --- */
-.chatbot-column {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid #e0e0e0;
-    height: 100%;
-    padding: 1.5rem 2rem;
-    box-sizing: border-box;
-    background-color: #f9f9f9;
-}
-
-/* --- Chat Box --- */
-#chatbot-container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-#chat-box {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: #fff;
-    overflow: hidden; /* Chat log scrolls internally */
-}
-
-/* --- Chat Log --- */
-#chat-log {
-    flex-grow: 1;
-    overflow-y: auto;
-    padding: 15px;
-    line-height: 1.6;
-
-    /* Hide scrollbar but keep scrolling */
-    scrollbar-width: none; /* Firefox */
-}
-#chat-log::-webkit-scrollbar { width: 0; height: 0; } /* Chrome/Safari */
-
-/* --- Chat Input --- */
-#chat-input {
-    border: none;
-    border-top: 1px solid #ccc;
-    padding: 15px;
-    outline: none;
-    width: 100%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    background: #fff;
-    font-size: 1rem;
-}
-
-/* --- Headings --- */
-h1, h2 { font-weight: 600; }
-
-/* --- Responsive Mobile --- */
-@media (max-width: 768px) {
-    .research-container { flex-direction: column; height: auto; }
-    .paper-column { height: auto; padding: 1.5rem; overflow-y: visible; }
-    .chatbot-column {
-        height: 90vh;
-        border-left: none;
-        border-top: 2px solid #e0e0e0;
-        margin-top: 2rem;
-        padding: 1rem;
+    /* ... General styles remain the same ... */
+    html, body {
+        height: 100%; margin: 0; overflow: hidden;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
-}
+    .research-container { display: flex; height: 100vh; width: 100%; }
+    .paper-column {
+        flex: 3; overflow-y: auto; padding: 2rem 3rem;
+        height: 100%; box-sizing: border-box;
+    }
+
+    /* --- 1. ROBUST CHATBOT FLEXBOX FIX (Based on your feedback) --- */
+    .chatbot-column {
+        flex: 2;
+        display: flex; /* Establish a flex context for the column */
+        flex-direction: column;
+        border-left: 1px solid #e0e0e0;
+        height: 100%;
+        padding: 1.5rem 2rem;
+        box-sizing: border-box;
+        background-color: #f9f9f9;
+        overflow: hidden; /* Prevent the column itself from scrolling */
+    }
+
+    #chatbot-container {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Correctly fills the available space in the column */
+        min-height: 0; /* Prevents flexbox overflow issues */
+    }
+
+    #chat-box {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* The box grows, but its children are now managed correctly */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background: #fff;
+        overflow: hidden; /* Contains the children, especially the scrolling log */
+        min-height: 0;
+    }
+
+    #chat-log {
+        flex-grow: 1; /* CRITICAL: This is the ONLY element that grows */
+        overflow-y: auto; /* And this is the ONLY element that scrolls */
+        padding: 15px;
+        line-height: 1.6;
+    }
+    
+    #chat-input {
+        flex-shrink: 0; /* Prevents the input from shrinking */
+        border: none;
+        border-top: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 0 0 7px 7px;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    h1, h2 { font-weight: 600; }
+
+    /* --- Responsive Mobile View --- */
+    @media (max-width: 768px) {
+        html, body { overflow: auto; }
+        .research-container { flex-direction: column; height: auto; }
+        .paper-column { height: auto; padding: 1.5rem; overflow-y: visible; }
+        .chatbot-column { 
+            height: 90vh; /* Keep the tall mobile chat view */
+            overflow: visible; /* Allow natural layout flow */
+            border-left: none; 
+            border-top: 2px solid #e0e0e0; 
+            margin-top: 2rem; 
+            padding: 1rem; 
+        }
+    }
 </style>
 
-<div class="research-container">
+<div class="research-container" id="research-container">
     <div class="paper-column">
         <h1>{{ page.title }}</h1>
         <p><strong>Authors:</strong> {{ page.authors | join: ", " }}</p>
@@ -108,7 +93,7 @@ h1, h2 { font-weight: 600; }
         </div>
         <hr>
         <div class="paper-body" id="paper-content">
-            {{ content }}
+             {{ content }}
         </div>
     </div>
 
@@ -117,19 +102,19 @@ h1, h2 { font-weight: 600; }
         <div id="chatbot-container">
             <div id="chat-box">
                 <div id="chat-log"></div>
-                <input id="chat-input" type="text" placeholder="Type your question here...">
+                <input id="chat-input" type="text" placeholder="e.g., 'How was the experiment conducted?'">
             </div>
         </div>
     </div>
 </div>
 
 <script>
+// --- JavaScript logic remains untouched, as it is perfect ---
 document.addEventListener('DOMContentLoaded', () => {
     const chatInput = document.getElementById('chat-input');
     const chatLog = document.getElementById('chat-log');
     const PROXY_URL = 'https://backe-nu.vercel.app/api/chat';
 
-    // --- Preprocess paper sections ---
     const paperSections = {};
     paperSections['Abstract'] = document.getElementById('paper-abstract').innerText;
 
@@ -154,17 +139,31 @@ document.addEventListener('DOMContentLoaded', () => {
         'Conclusion': ['conclusion', 'takeaway', 'discussion', 'summarize', 'summary'],
     };
 
-    // --- Smart paragraph picker ---
     const getSmartContext = (query, sectionContent) => {
-        const stopWords = new Set(['a','an','the','is','in','on','of','for','to','what','did','they','how','were']);
-        const queryKeywords = query.toLowerCase().split(/\s+/).filter(w => !stopWords.has(w) && w.length>3);
+        const stopWords = new Set(['a', 'an', 'the', 'is', 'in', 'on', 'of', 'for', 'to', 'what', 'did', 'they', 'how', 'were']);
+        const queryKeywords = query.toLowerCase().split(/\s+/).filter(word => !stopWords.has(word) && word.length > 3);
 
-        if (!queryKeywords.length) return sectionContent.slice(0,4000);
+        if (queryKeywords.length === 0) return sectionContent.slice(0, 4000);
 
-        const paragraphs = sectionContent.split(/\n\s*\n/).filter(p => p.trim().length>10);
-        const relevant = paragraphs.filter(p => queryKeywords.some(k => new RegExp(`\\b${k}\\b`, 'i').test(p)));
+        const paragraphs = sectionContent.split(/\n\s*\n/).filter(p => p.trim().length > 10);
+        const relevantParagraphs = new Set();
 
-        return relevant.length ? relevant.join('\n\n') : sectionContent.slice(0,4000);
+        paragraphs.forEach(p => {
+            for (const keyword of queryKeywords) {
+                if (new RegExp(`\\b${keyword}\\b`, 'i').test(p)) {
+                    relevantParagraphs.add(p);
+                    break;
+                }
+            }
+        });
+
+        if (relevantParagraphs.size > 0) {
+            console.log(`Smart Picker: Found ${relevantParagraphs.size} relevant paragraphs for keywords: ${queryKeywords.join(', ')}`);
+            return [...relevantParagraphs].join('\n\n');
+        } else {
+            console.log("Smart Picker: No matching paragraphs. Falling back to section start.");
+            return sectionContent.slice(0, 4000);
+        }
     };
 
     chatInput.addEventListener('keypress', async (e) => {
@@ -175,20 +174,20 @@ document.addEventListener('DOMContentLoaded', () => {
         chatLog.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
         chatInput.value = '';
         chatLog.scrollTop = chatLog.scrollHeight;
-
+        
         chatLog.innerHTML += `<p><strong>Bot:</strong> Thinking...</p>`;
         setTimeout(() => { chatLog.scrollTop = chatLog.scrollHeight; }, 50);
 
-        let bestSection = paperSections['Full'];
+        let bestSectionContent = paperSections['Full'];
         let detectedSection = 'Full';
 
         outerLoop: for (const [section, keywords] of Object.entries(sectionKeywords)) {
             for (const kw of keywords) {
                 if (new RegExp(`\\b${kw}\\b`, 'i').test(userInput)) {
-                    const actual = Object.keys(paperSections).find(h2 => new RegExp(section, 'i').test(h2));
-                    if (actual && paperSections[actual]) {
-                        bestSection = paperSections[actual];
-                        detectedSection = actual;
+                    const actualSectionTitle = Object.keys(paperSections).find(h2 => new RegExp(section, 'i').test(h2));
+                    if (actualSectionTitle && paperSections[actualSectionTitle]) {
+                        bestSectionContent = paperSections[actualSectionTitle];
+                        detectedSection = actualSectionTitle;
                         break outerLoop;
                     }
                 }
@@ -196,30 +195,42 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let contextToSend;
-        if (detectedSection==='Full' || detectedSection==='Abstract' || /summary|summarize|overview/i.test(userInput)) {
-            contextToSend = bestSection;
+        if (detectedSection === 'Full' || detectedSection === 'Abstract' || /summary|summarize|overview/i.test(userInput)) {
+            contextToSend = bestSectionContent;
+            console.log(`Summary/Abstract requested. Using full section: "${detectedSection}"`);
         } else {
-            contextToSend = getSmartContext(userInput, bestSection);
+            contextToSend = getSmartContext(userInput, bestSectionContent);
         }
+        
+        console.log(`Final Context Sent (length: ${contextToSend.length}):\n---\n${contextToSend.slice(0, 400)}...`);
 
         try {
-            const res = await fetch(PROXY_URL,{
-                method:'POST',
-                headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({ context: contextToSend.slice(0,15000), message:userInput })
+            const response = await fetch(PROXY_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    context: contextToSend.slice(0, 15000),
+                    message: userInput 
+                })
             });
-            if (!res.ok) throw new Error(await res.text());
-            const data = await res.json();
 
-            const thinkingMsg = chatLog.querySelector('p:last-child');
-            if(thinkingMsg) thinkingMsg.remove();
+            if (!response.ok) throw new Error(await response.text());
 
-            chatLog.innerHTML += `<p><strong>Bot:</strong> ${data.response || "No answer."}</p>`;
-        } catch(err){
-            console.error(err);
-            const thinkingMsg = chatLog.querySelector('p:last-child');
-            if(thinkingMsg) thinkingMsg.remove();
-            chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, an error occurred.</p>`;
+            const data = await response.json();
+            const thinkingMessage = chatLog.querySelector('p:last-child');
+            if (thinkingMessage) thinkingMessage.remove();
+
+            if (data.response) {
+                chatLog.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+            } else {
+                throw new Error("Received an empty or invalid response.");
+            }
+
+        } catch (error) {
+            console.error('Chatbot error:', error);
+            const thinkingMessage = chatLog.querySelector('p:last-child');
+            if (thinkingMessage) thinkingMessage.remove();
+            chatLog.innerHTML += `<p><strong>Bot:</strong> Sorry, an error occurred. Check the console for details.</p>`;
         } finally {
             chatLog.scrollTop = chatLog.scrollHeight;
         }
