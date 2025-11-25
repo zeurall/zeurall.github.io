@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: course_post
 title: "Getting Started with GitHub! 🚀"
 ---
 
