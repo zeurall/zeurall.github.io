@@ -1,6 +1,6 @@
 /*
   styles/research_post.css
-  v3 - Perfected two-column active state based on your detailed feedback.
+  v4 - Final. Locked the active two-column layout to the viewport.
 */
 
 /* --- 1. Base Layout & Reading Experience --- */
@@ -79,20 +79,23 @@
     cursor: not-allowed;
 }
 
-/* --- 3. PERFECTED 'ACTIVE' STATE (Your Detailed UI/UX Fixes) --- */
+/* --- 3. FINAL 'ACTIVE' STATE (True Layout Lock) --- */
 .research-container.chatbot-active {
     max-width: 100%;
     display: flex;
-    /* 
-      KEY FIX: Calculate height based on viewport minus the navbar height. 
-      Assuming a navbar height of approx. 70px. 
-    */
-    height: calc(100vh - 70px);
-    padding: 0;
-    margin: 70px 0 0 0; /* Align container below the navbar */
     box-sizing: border-box;
-    overflow: hidden;
+
+    /* KEY FIX: Use fixed positioning to lock the layout below the navbar */
+    position: fixed;
+    top: 70px; /* Assumes 70px navbar height. Adjust if needed. */
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    margin: 0; /* Override any base margins */
+    padding: 0; /* Reset padding for the container */
 }
+
 
 .chatbot-active .paper-column {
     flex: 3;
@@ -161,6 +164,8 @@
         display: block;
         height: auto;
         padding: 0;
+        /* Revert to non-fixed for mobile to allow natural scrolling */
+        position: static;
         margin-top: 70px;
     }
 
