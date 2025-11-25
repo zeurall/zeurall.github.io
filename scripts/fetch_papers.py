@@ -9,7 +9,7 @@ if not os.path.exists('_research'):
 # Search for the latest AI papers
 search = arxiv.Search(
   query = "cat:cs.AI",
-  max_results = 10,
+  max_results = 1,
   sort_by = arxiv.SortCriterion.SubmittedDate
 )
 
